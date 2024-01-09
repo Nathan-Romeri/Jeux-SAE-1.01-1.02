@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Katekyo hitman Reborn , One Piece, Dragon ball z, Naruto, Bleach, Gintama, Sket Danc, Toriko and Beelzebub_.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Katekyo hitman Reborn , One Piece, Dragon ball z, Naruto, Bleach, Gintama, Sket Danc, Toriko and Beelzebub_.jfif" />
+  </ItemGroup>
+
 </Project>
