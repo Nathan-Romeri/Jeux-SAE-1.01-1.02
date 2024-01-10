@@ -30,6 +30,9 @@ namespace Jeux_SAE_1._01_1._02
             if (fenetreMenu.DialogResult == false)
 
                 Application.Current.Shutdown();
+            ChoixNiveau fenetreChoix = new ChoixNiveau();
+            fenetreMenu.ShowDialog();
+
         }
 
 

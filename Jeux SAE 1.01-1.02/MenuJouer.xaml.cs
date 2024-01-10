@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Jeux_SAE_1._01_1._02
@@ -28,7 +29,7 @@ namespace Jeux_SAE_1._01_1._02
 
         private void boutonJouer_Click(object sender, RoutedEventArgs e)
         {
-           this.DialogResult = true;
+            this.DialogResult = true;
         }
 
         private void boutonQuitter_Click(object sender, RoutedEventArgs e)
