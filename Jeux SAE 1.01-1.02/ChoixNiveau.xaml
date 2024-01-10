@@ -63,8 +63,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Stroke="Black"
-            StrokeThickness="10"
-            TouchEnter="Rectangle_TouchEnter">
+            StrokeThickness="10">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/naruto_PNG29.png" Stretch="UniformToFill" />
             </Rectangle.Fill>

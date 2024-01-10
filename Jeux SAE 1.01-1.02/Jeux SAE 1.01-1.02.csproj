@@ -9,28 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="23457-1-one-piece-luffy-transparent-background.png" />
-    <None Remove="89e0dea18ceb5e396f9ec1a5ae109262.png" />
-    <None Remove="Dragon-Ball-Goku-PNG-Image.png" />
     <None Remove="Fond_ecran_flouter.png" />
     <None Remove="ignlive-jumpforce-blogroll-1550106283996_160w.jpg" />
-    <None Remove="Naruto Shippuden, free png image.jfif" />
-    <None Remove="Naruto-Shippuden_-free-png-image.png" />
-    <None Remove="naruto_PNG29.png" />
-    <None Remove="sticker-png-one-piece-monkey-the-luffy-thumbnail.png" />
+    <None Remove="Manga-Quest-10-01-2024.png" />
     <None Remove="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="23457-1-one-piece-luffy-transparent-background.png" />
-    <Resource Include="89e0dea18ceb5e396f9ec1a5ae109262.png" />
-    <Resource Include="Dragon-Ball-Goku-PNG-Image.png" />
     <Resource Include="Fond_ecran_flouter.png" />
     <Resource Include="ignlive-jumpforce-blogroll-1550106283996_160w.jpg" />
-    <Resource Include="Naruto Shippuden, free png image.jfif" />
-    <Resource Include="Naruto-Shippuden_-free-png-image.png" />
-    <Resource Include="naruto_PNG29.png" />
-    <Resource Include="sticker-png-one-piece-monkey-the-luffy-thumbnail.png" />
+    <Resource Include="Manga-Quest-10-01-2024.png" />
     <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
 
