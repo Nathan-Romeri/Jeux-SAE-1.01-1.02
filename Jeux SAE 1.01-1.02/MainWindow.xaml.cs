@@ -24,7 +24,7 @@ namespace Jeux_SAE_1._01_1._02
         public MainWindow()
         {
 
-            MenuJouer fenetreMenu = new MenuJouer();
+            MenuJouer fenetreMenu = new();
             fenetreMenu.ShowDialog();
 
             if (fenetreMenu.DialogResult == false)
