@@ -63,7 +63,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Stroke="Black"
-            StrokeThickness="10">
+            StrokeThickness="10" TouchEnter="Rectangle_TouchEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/naruto_PNG29.png" Stretch="UniformToFill" />
             </Rectangle.Fill>
@@ -97,35 +97,35 @@
         </Rectangle>
         <Label
             x:Name="Difficulté_facile"
-            Width="208"
+            Width="295"
             Height="86"
-            Margin="348,732,0,0"
+            Margin="301,732,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="FACILE"
+            Content="APPRENTI"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White" />
         <Label
             x:Name="Difficulté_moyen"
-            Width="228"
+            Width="300"
             Height="86"
             Margin="0,732,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content=" MOYEN"
+            Content="AMATEUR"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
             RenderTransformOrigin="0.493,0.699" />
         <Label
             x:Name="Difficulté_difficile"
-            Width="276"
+            Width="120"
             Height="86"
-            Margin="1337,732,0,0"
+            Margin="1412,732,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="DIFFICILE"
+            Content="PRO"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"

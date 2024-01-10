@@ -25,5 +25,10 @@ namespace Jeux_SAE_1._01_1._02
             
 
         }
+
+        private void Rectangle_TouchEnter(object sender, TouchEventArgs e)
+        {
+
+        }
     }
 }
