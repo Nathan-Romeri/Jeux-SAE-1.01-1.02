@@ -9,7 +9,8 @@
     Width="1920"
     Height="1080"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" WindowState="Minimized">
+    WindowState="Maximized"
+    mc:Ignorable="d">
     <Grid>
         <Rectangle
             x:Name="rectangle_image"
