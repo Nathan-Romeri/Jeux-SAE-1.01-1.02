@@ -22,20 +22,9 @@ namespace Jeux_SAE_1._01_1._02
         public MenuJouer()
         {
             InitializeComponent();
-           
-
-
-
+          
         }
 
-        private void button_Annuler_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-        }
 
-        private void Button_Jouer_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-        }
     }
 }
