@@ -29,6 +29,24 @@
                 <ImageBrush ImageSource="/Manga-Quest-10-01-2024.png" />
             </Rectangle.Fill>
         </Rectangle>
+        <Button
+            x:Name="boutonJouer"
+            Width="400"
+            Height="131"
+            Margin="132,463,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="boutonJouer_Click"
+            Content="Jouer" />
+        <Button
+            x:Name="boutonQuitter"
+            Width="400"
+            Height="131"
+            Margin="132,647,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="boutonQuitter_Click"
+            Content="Quitter" />
 
     </Grid>
 </Window>
