@@ -23,43 +23,33 @@ namespace Jeux_SAE_1._01_1._02
     {
         public MainWindow()
         {
-            InitializeComponent();
+
             MenuJouer fenetreMenu = new MenuJouer();
             fenetreMenu.ShowDialog();
-
-           
 
             if (fenetreMenu.DialogResult == false)
 
                 Application.Current.Shutdown();
-
-    
-
-
-
-
         }
 
 
 
-     
-
-        private void Rectangle_KeyDown(object sender, KeyEventArgs e)
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            // Déplacez le personnage en fonction de la touche appuyée
+            // Déplacez le personnage
             switch (e.Key)
             {
                 case Key.Up:
-                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) - 10);
+                    personnage.Margin = new Thickness(personnage.Margin.Left, personnage.Margin.Top - 20, 0, 0);
                     break;
                 case Key.Down:
-                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) + 10);
+                    personnage.Margin = new Thickness(personnage.Margin.Left, personnage.Margin.Top + 20, 0, 0);
                     break;
                 case Key.Left:
-                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) - 10);
+                    personnage.Margin = new Thickness(personnage.Margin.Left - 20, personnage.Margin.Top, 0, 0);
                     break;
                 case Key.Right:
-                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) + 10);
+                    personnage.Margin = new Thickness(personnage.Margin.Left + 20, personnage.Margin.Top, 0, 0);
                     break;
             }
         }
