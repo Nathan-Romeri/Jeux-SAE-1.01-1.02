@@ -11,5 +11,26 @@
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Border
+            Width="1920"
+            Height="1080"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1">
+            <Border.Background>
+                <ImageBrush ImageSource="/pixilart-drawing.png" />
+            </Border.Background>
+            <Rectangle
+                x:Name="personnage"
+                Width="109"
+                Height="107"
+                Margin="447,432,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Fill="White"
+                Stroke="Black" />
+        </Border>
+    </Grid>
 </Window>

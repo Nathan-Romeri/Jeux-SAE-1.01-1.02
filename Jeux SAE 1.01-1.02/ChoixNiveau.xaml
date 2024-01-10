@@ -57,6 +57,7 @@
             </Label.Foreground>
         </Label>
         <Rectangle
+            x:Name="rectangleApprenti"
             Width="269"
             Height="341"
             Margin="314,359,0,0"
