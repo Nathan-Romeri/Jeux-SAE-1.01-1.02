@@ -6,8 +6,10 @@
     xmlns:local="clr-namespace:Jeux_SAE_1._01_1._02"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ChoixNiveau"
-    Width="800"
-    Height="450"
+    Width="1920"
+    Height="1080"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
     mc:Ignorable="d">
     <Grid />
 </Window>

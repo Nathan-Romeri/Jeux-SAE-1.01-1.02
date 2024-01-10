@@ -10,6 +10,6 @@
     Height="1080"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
-    mc:Ignorable="d" ResizeMode="NoResize">
-    <Grid/>
+    mc:Ignorable="d">
+    <Grid />
 </Window>
