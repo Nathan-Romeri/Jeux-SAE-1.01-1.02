@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fond_ecran_flouter.png" />
     <None Remove="ignlive-jumpforce-blogroll-1550106283996_160w.jpg" />
     <None Remove="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fond_ecran_flouter.png" />
     <Resource Include="ignlive-jumpforce-blogroll-1550106283996_160w.jpg" />
     <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
