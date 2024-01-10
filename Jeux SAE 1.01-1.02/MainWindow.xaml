@@ -8,9 +8,10 @@
     Title="Manga Quest"
     Width="1920"
     Height="1080"
+    KeyDown="MainWindow_KeyDown"
     WindowStartupLocation="CenterScreen"
-    WindowState="Maximized"
-    mc:Ignorable="d">
+    WindowState="Maximized" ResizeMode="NoResize"
+    >
     <Grid>
         <Border
             Width="1920"
