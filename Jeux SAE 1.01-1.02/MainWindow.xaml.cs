@@ -27,9 +27,13 @@ namespace Jeux_SAE_1._01_1._02
             MenuJouer fenetreMenu = new MenuJouer();
             fenetreMenu.ShowDialog();
 
-            ChoixNiveau fenetreNiveau = new ChoixNiveau();
-            fenetreNiveau.ShowDialog();
 
+
+            if (fenetreMenu.DialogResult == false)
+                Application.Current.Shutdown();
+            InitializeComponent();
+
+           
 
         }
 
