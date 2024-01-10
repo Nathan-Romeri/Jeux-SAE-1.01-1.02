@@ -36,8 +36,12 @@
             Margin="132,463,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="Black"
             Click="boutonJouer_Click"
-            Content="Jouer" FontSize="48" FontFamily="Showcard Gothic" Foreground="#FFF1FF00" Background="Black" />
+            Content="Jouer"
+            FontFamily="Showcard Gothic"
+            FontSize="48"
+            Foreground="#FFF1FF00" />
         <Button
             x:Name="boutonQuitter"
             Width="400"
@@ -45,8 +49,12 @@
             Margin="132,647,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="Black"
             Click="boutonQuitter_Click"
-            Content="Quitter" Background="Black" Foreground="Red" FontSize="48" FontFamily="Showcard Gothic" />
+            Content="Quitter"
+            FontFamily="Showcard Gothic"
+            FontSize="48"
+            Foreground="Red" />
 
     </Grid>
 </Window>
