@@ -15,5 +15,31 @@
                 <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="Rectangle_FondDifficulté" HorizontalAlignment="Center" Height="750" Stroke="Black" VerticalAlignment="Center" Width="1500" StrokeThickness="25" Fill="#FF000661">
+            <Rectangle.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#D8FF0000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Label Content="CHOISIR LA DIFFICULTÉ" HorizontalAlignment="Left" Margin="306,157,0,0" VerticalAlignment="Top" Height="202" Width="1300" FontSize="125" RenderTransformOrigin="0.733,0.526" BorderBrush="White">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Rectangle HorizontalAlignment="Left" Height="341" Margin="314,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="269" StrokeThickness="10">
+            <Rectangle.Fill>
+                <ImageBrush/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Center" Height="341" Margin="0,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="268" StrokeThickness="10" Fill="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="341" Margin="1337,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="269" StrokeThickness="10" Fill="Black"/>
+        <Label x:Name="Difficulté_facile" Content="FACILE" HorizontalAlignment="Left" Margin="348,732,0,0" VerticalAlignment="Top" Height="86" Width="200" FontSize="72" FontFamily="Calibri" Foreground="White"/>
+        <Label x:Name="Difficulté_moyen" Content=" MOYEN" HorizontalAlignment="Center" Margin="0,732,0,0" VerticalAlignment="Top" Height="86" Width="268" FontSize="72" FontFamily="Calibri" Foreground="White" RenderTransformOrigin="0.493,0.699"/>
+        <Label x:Name="Difficulté_difficile" Content="DIFFICILE" HorizontalAlignment="Left" Margin="1334,732,0,0" VerticalAlignment="Top" Height="86" Width="276" FontSize="72" FontFamily="Calibri" Foreground="White" RenderTransformOrigin="0.493,0.699"/>
     </Grid>
 </Window>
