@@ -20,5 +20,20 @@
                 <ImageBrush ImageSource="/wallpapersden.com_jump-force-2019_1920x1080.jpg" />
             </Rectangle.Fill>
         </Rectangle>
+        <Button
+            x:Name="Button_Jouer"
+            Margin="78,435,1554,532"
+            Click="Button_Jouer_Click"
+            Content="Jouer" FontSize="48" FontFamily="Rockwell Extra Bold" />
+        <Image
+            Margin="0,0,1187,788"
+            Source="/Manga-Quest-10-01-2024.png"
+            Stretch="Fill" />
+        <Button
+            x:Name="button_Annuler"
+            Margin="78,577,1554,371"
+            Click="button_Annuler_Click"
+            Content="Quitter" FontSize="48" FontFamily="Gill Sans Ultra Bold" />
+
     </Grid>
 </Window>
