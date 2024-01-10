@@ -26,6 +26,14 @@ namespace Jeux_SAE_1._01_1._02
           
         }
 
+        private void boutonJouer_Click(object sender, RoutedEventArgs e)
+        {
+           this.DialogResult = true;
+        }
 
+        private void boutonQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+        }
     }
 }
