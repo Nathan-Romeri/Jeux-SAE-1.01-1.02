@@ -21,6 +21,7 @@ namespace Jeux_SAE_1._01_1._02
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NiveauDifficulte difficulteActuelle;
         public MainWindow()
         {
 
@@ -28,35 +29,56 @@ namespace Jeux_SAE_1._01_1._02
             fenetreMenu.ShowDialog();
 
             if (fenetreMenu.DialogResult == false)
-
                 Application.Current.Shutdown();
             
             
             ChoixNiveau fenetreChoix = new ChoixNiveau();
             fenetreChoix.ShowDialog();
 
+            if (fenetreChoix.DialogResult == true)
+            {
+                difficulteActuelle = fenetreChoix.DifficulteChoisie;
+                ExecuterNiveau();
+            }
         }
 
+        private void ExecuterNiveau()
+        {
+            switch (difficulteActuelle)
+            {
+                case NiveauDifficulte.Apprenti:
+                    ExecuterNiveauApprenti();
+                    break;
+                case NiveauDifficulte.Amateur:
+                    ExecuterNiveauAmateur();
+                    break;
+                case NiveauDifficulte.Pro:
+                    ExecuterNiveauPro();
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        private void ExecuterNiveauApprenti()
+        {
+            //Niveau Apprenti (Naruto)
+
+        }
+
+        private void ExecuterNiveauAmateur()
+        {
+            //Niveau Amateur (One Piece)
+        }
+
+        private void ExecuterNiveauPro()
+        {
+            //Niveau Pro (DBZ)
+        }
 
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            // Déplacez le personnage
-            switch (e.Key)
-            {
-                case Key.Up:
-                    personnage.Margin = new Thickness(personnage.Margin.Left, personnage.Margin.Top - 20, 0, 0);
-                    break;
-                case Key.Down:
-                    personnage.Margin = new Thickness(personnage.Margin.Left, personnage.Margin.Top + 20, 0, 0);
-                    break;
-                case Key.Left:
-                    personnage.Margin = new Thickness(personnage.Margin.Left - 20, personnage.Margin.Top, 0, 0);
-                    break;
-                case Key.Right:
-                    personnage.Margin = new Thickness(personnage.Margin.Left + 20, personnage.Margin.Top, 0, 0);
-                    break;
-            }
+           //Déplacements Personnage
         }
     }
 }

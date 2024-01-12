@@ -19,26 +19,38 @@ namespace Jeux_SAE_1._01_1._02
     /// </summary>
     public partial class ChoixNiveau : Window
     {
+        public NiveauDifficulte DifficulteChoisie { get; private set; }
+
         public ChoixNiveau()
         {
             InitializeComponent();
+
            
 
         }
 
         private void Apprenti_Click(object sender, RoutedEventArgs e)
         {
+            DifficulteChoisie = NiveauDifficulte.Apprenti;
             this.DialogResult = true;
         }
 
         private void Amateur_Click(object sender, RoutedEventArgs e)
         {
+            DifficulteChoisie = NiveauDifficulte.Amateur;
             this.DialogResult = true;
         }
 
         private void Pro_Click(object sender, RoutedEventArgs e)
         {
+            DifficulteChoisie = NiveauDifficulte.Pro;
             this.DialogResult = true;
         }
+    }
+    public enum NiveauDifficulte
+    {
+        Apprenti,
+        Amateur,
+        Pro
     }
 }
