@@ -8,11 +8,7 @@
     Title="Manga Quest"
     Width="1920"
     Height="1080"
-    ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    WindowState="Maximized">
-    <Grid>
-        <Canvas x:Name="canvas" Margin="0,0,0,0" Background="#FF989898"/>
-    </Grid>
+    WindowState="Maximized" KeyDown="Window_KeyDown">
 </Window>
     

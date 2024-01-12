@@ -25,8 +25,6 @@ namespace Jeux_SAE_1._01_1._02
         {
             InitializeComponent();
 
-           
-
         }
 
         private void Apprenti_Click(object sender, RoutedEventArgs e)
