@@ -21,7 +21,7 @@
             BorderBrush="Black"
             BorderThickness="1">
             <Border.Background>
-                <ImageBrush ImageSource="/pixilart-drawing.png" />
+                <ImageBrush ImageSource="/pixil-frame-0.png" />
             </Border.Background>
             <Rectangle
                 x:Name="personnage"
@@ -29,9 +29,11 @@
                 Height="107"
                 Margin="447,432,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Fill="White"
-                Stroke="Black" />
+                VerticalAlignment="Top" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/naruto_pixel.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
         </Border>
     </Grid>
 </Window>
