@@ -56,46 +56,40 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Rectangle
+        <Button
             x:Name="rectangleApprenti"
             Width="269"
             Height="341"
             Margin="314,359,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Stroke="Black"
-            StrokeThickness="10">
-            <Rectangle.Fill>
+            VerticalAlignment="Top" Click="Apprenti_Click">
+            <Button.Background>
                 <ImageBrush ImageSource="/naruto_PNG29.png" Stretch="UniformToFill" />
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle
+            </Button.Background>
+        </Button>
+        <Button
             Width="268"
             Height="341"
             Margin="0,359,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Stroke="Black"
-            StrokeThickness="10">
-            <Rectangle.Fill>
+            VerticalAlignment="Top" Click="Amateur_Click">
+            <Button.Background>
                 <ImageBrush ImageSource="/23457-1-one-piece-luffy-transparent-background.png" Stretch="Uniform" />
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle
+            </Button.Background>
+        </Button>
+        <Button
             Width="269"
             Height="341"
             Margin="1337,359,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Stroke="Black"
-            StrokeThickness="10">
-            <Rectangle.Fill>
+            VerticalAlignment="Top" Click="Pro_Click">
+            <Button.Background>
                 <ImageBrush
                     ImageSource="/Dragon-Ball-Goku-PNG-Image.png"
                     Stretch="UniformToFill"
                     TileMode="None" />
-            </Rectangle.Fill>
-        </Rectangle>
+            </Button.Background>
+        </Button>
         <Label
             x:Name="Difficulté_facile"
             Width="295"

@@ -26,6 +26,19 @@ namespace Jeux_SAE_1._01_1._02
 
         }
 
+        private void Apprenti_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
 
+        private void Amateur_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        private void Pro_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }
