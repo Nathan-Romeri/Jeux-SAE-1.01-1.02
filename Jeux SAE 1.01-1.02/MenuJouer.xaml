@@ -64,10 +64,10 @@
             VerticalAlignment="Top"
             Background="Black"
             Click="boutonQuitter_Click"
-            Content="Parametres"
+            Content="Paramètres"
             FontFamily="Showcard Gothic"
             FontSize="48"
-            Foreground="#FF00E843" />
+            Foreground="#FF05A725" />
 
     </Grid>
 </Window>
