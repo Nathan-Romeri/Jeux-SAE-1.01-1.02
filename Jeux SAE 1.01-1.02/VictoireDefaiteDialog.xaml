@@ -19,7 +19,7 @@
             Width="Auto"
             Height="Auto">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="P:\SAE 1.01 -1.02\Jeux SAE 1.01-1.02\Jeux SAE 1.01-1.02\img\Fond_ecran_flouter.png" />
+                <ImageBrush ImageSource="/Fond_ecran_flouter.png" />
             </Rectangle.Fill>
         </Rectangle>
 

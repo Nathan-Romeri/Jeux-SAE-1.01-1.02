@@ -25,6 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="23457-1-one-piece-luffy-transparent-background.png" />
+    <Resource Include="Dragon-Ball-Goku-PNG-Image.png" />
+    <Resource Include="Fond_ecran_flouter.png" />
+    <Resource Include="Manga-Quest-10-01-2024.png" />
+    <Resource Include="naruto_PNG29.png" />
+    <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="img\23457-1-one-piece-luffy-transparent-background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

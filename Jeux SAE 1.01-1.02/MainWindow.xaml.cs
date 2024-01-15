@@ -151,7 +151,7 @@ namespace Jeux_SAE_1._01_1._02
                         {
                             Image = new Image
                             {
-                                Source = new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\item_collect3.png")),
+                                Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory+"img\\item_collect3.png")),
                                 Width = 50, // Ajustez la largeur de l'image
                                 Height = 50, // Ajustez la hauteur de l'image
                             }
@@ -202,13 +202,13 @@ namespace Jeux_SAE_1._01_1._02
             switch (difficulteActuelle)
             {
                 case NiveauDifficulte.Apprenti:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\naruto_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\naruto_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Amateur:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\luffy_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\luffy_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Pro:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\goku_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\goku_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 default:
                     break;
@@ -240,11 +240,11 @@ namespace Jeux_SAE_1._01_1._02
             switch (niveau)
             {
                 case NiveauDifficulte.Apprenti:
-                    return "P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\fond_vert.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_vert.jpg";
                 case NiveauDifficulte.Amateur:
-                    return "P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\fond_beige.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_beige.jpg";
                 case NiveauDifficulte.Pro:
-                    return "P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\fond_bleu.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_bleu.jpg";
                 default:
                     // Cas par défaut, retourne une image par défaut
                     return "Images/Default.jpg";
