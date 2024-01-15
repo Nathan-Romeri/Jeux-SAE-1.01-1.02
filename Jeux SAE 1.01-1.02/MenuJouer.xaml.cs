@@ -15,16 +15,13 @@ using System.Windows.Shapes;
 
 namespace Jeux_SAE_1._01_1._02
 {
-    /// <summary>
-    /// Logique d'interaction pour MenuJouer.xaml
-    /// </summary>
+   
     public partial class MenuJouer : Window
     {
         public MenuJouer()
         {
             InitializeComponent();
-            
-          
+
         }
 
         private void boutonJouer_Click(object sender, RoutedEventArgs e)
@@ -36,5 +33,7 @@ namespace Jeux_SAE_1._01_1._02
         {
             this.DialogResult = false;
         }
+
+        
     }
 }

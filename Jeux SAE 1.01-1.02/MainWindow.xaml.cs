@@ -55,6 +55,8 @@ namespace Jeux_SAE_1._01_1._02
                 //Nombres aléatoires
                 random = new Random();
 
+             
+
                 // Ajout de l'image en tant que fond du Canvas
                 string cheminImage = ObtenirCheminImageDuNiveau(difficulteActuelle);
                 ImageBrush fondImage = new ImageBrush(new BitmapImage(new Uri(cheminImage, UriKind.RelativeOrAbsolute)));
@@ -431,50 +433,6 @@ namespace Jeux_SAE_1._01_1._02
         {
             CompositionTarget.Rendering -= GameLoop;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
