@@ -28,9 +28,14 @@
             Height="750"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Fill="#FF000661"
             Stroke="Black"
             StrokeThickness="25">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
             <Rectangle.OpacityMask>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="Black" />
@@ -44,15 +49,20 @@
             Margin="0,209,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="White"
             Content="CHOISIR LA DIFFICULTÉ"
             FontFamily="Copperplate Gothic Bold"
             FontSize="100"
             RenderTransformOrigin="0.733,0.526">
+            <Label.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.BorderBrush>
             <Label.Foreground>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="#FFFFC700" />
+                    <GradientStop Offset="1" Color="White" />
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
@@ -62,7 +72,7 @@
             Height="341"
             Margin="314,359,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Click="Apprenti_Click">
+            VerticalAlignment="Top" Click="Apprenti_Click" BorderBrush="White">
             <Button.Background>
                 <ImageBrush ImageSource="/naruto_PNG29.png" Stretch="UniformToFill" />
             </Button.Background>
@@ -72,7 +82,7 @@
             Height="341"
             Margin="0,359,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" Click="Amateur_Click">
+            VerticalAlignment="Top" Click="Amateur_Click" BorderBrush="White">
             <Button.Background>
                 <ImageBrush ImageSource="/23457-1-one-piece-luffy-transparent-background.png" Stretch="Uniform" />
             </Button.Background>
@@ -83,6 +93,18 @@
             Margin="1337,359,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" Click="Pro_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
             <Button.Background>
                 <ImageBrush
                     ImageSource="/Dragon-Ball-Goku-PNG-Image.png"
@@ -100,7 +122,11 @@
             Content="APPRENTI"
             FontFamily="Algerian"
             FontSize="60"
-            Foreground="White" />
+            Foreground="White" Cursor="" >
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
         <Label
             x:Name="Difficulté_moyen"
             Width="300"
@@ -112,7 +138,11 @@
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" />
+            RenderTransformOrigin="0.493,0.699" >
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
         <Label
             x:Name="Difficulté_difficile"
             Width="120"
@@ -124,6 +154,10 @@
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" />
+            RenderTransformOrigin="0.493,0.699" >
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>
