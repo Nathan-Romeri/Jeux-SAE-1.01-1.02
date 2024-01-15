@@ -27,6 +27,7 @@ namespace Jeux_SAE_1._01_1._02
         private DispatcherTimer spawnTimer;
         private Rectangle ennemi;
         private Rectangle projectileEnnemi;
+       
 
 
 
@@ -63,8 +64,8 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Création du personnage
                 personnage = new Rectangle();
-                personnage.Width = 150;
-                personnage.Height = 150;
+                personnage.Width = 120;
+                personnage.Height = 120;
                 personnage.Fill = Brushes.Red;
 
                 Canvas.SetLeft(personnage, 0);
@@ -106,16 +107,15 @@ namespace Jeux_SAE_1._01_1._02
 
                 //Ajout ennemie
 
-
-
-
-
-                ennemi = new Rectangle
+                Image ennemi = new Image
                 {
-                    Width = 80,
-                    Height = 80,
-                    Fill = Brushes.Yellow
+                    Width = 100,
+                    Height = 100,
                 };
+
+                BitmapImage imageSource = new(new Uri("P:\\SAE 1.01 -1.02\\Jeux-SAE-1.01-1.02\\Jeux SAE 1.01-1.02\\img\\ennemis_naruto.png"));
+                ennemi.Source = imageSource;
+
 
                 Canvas.SetRight(ennemi, canvas.ActualWidth / 20 - ennemi.Width / 2 + 40);
                 Canvas.SetTop(ennemi, 20);
@@ -424,6 +424,15 @@ namespace Jeux_SAE_1._01_1._02
             newEnemyProjectile.BeginAnimation(Canvas.TopProperty, animation);
         }
 
+        private void StartGameLoop()
+        {
+            CompositionTarget.Rendering += GameLoop;
+        }
+
+        private void StopGameLoop()
+        {
+            CompositionTarget.Rendering -= GameLoop;
+        }
 
 
 
