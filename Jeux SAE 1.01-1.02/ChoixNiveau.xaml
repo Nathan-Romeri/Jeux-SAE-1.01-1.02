@@ -26,14 +26,14 @@
             x:Name="Rectangle_FondDifficulté"
             Width="1500"
             Height="750"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Stroke="Black"
-            StrokeThickness="25">
+            StrokeThickness="25" Margin="212,0,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="Red" />
+                    <GradientStop Offset="1" Color="#5BFF0000" />
                 </LinearGradientBrush>
             </Rectangle.Fill>
             <Rectangle.OpacityMask>
@@ -45,7 +45,7 @@
         </Rectangle>
         <Label
             Width="1360"
-            Height="202"
+            Height="113"
             Margin="0,209,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -60,50 +60,57 @@
                 </LinearGradientBrush>
             </Label.BorderBrush>
             <Label.Foreground>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="White" />
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF888888" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.147"/>
+                    <GradientStop Color="White" Offset="0.37"/>
+                    <GradientStop Color="#FFC5C5C5" Offset="0.513"/>
+                    <GradientStop Color="White" Offset="0.413"/>
+                    <GradientStop Color="White" Offset="0.273"/>
+                    <GradientStop Color="White" Offset="0.21"/>
+                    <GradientStop Color="White" Offset="0.753"/>
+                    <GradientStop Color="White" Offset="0.077"/>
+                    <GradientStop Color="White" Offset="0.817"/>
+                    <GradientStop Color="White" Offset="0.687"/>
+                    <GradientStop Color="White" Offset="0.323"/>
+                    <GradientStop Color="#FFC1C1C1" Offset="0.553"/>
+                    <GradientStop Color="White" Offset="0.47"/>
+                    <GradientStop Color="#FFD5D5D5" Offset="0.897"/>
+                    <GradientStop Color="#FF797979"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Button
             x:Name="rectangleApprenti"
-            Width="269"
-            Height="341"
-            Margin="314,359,0,0"
+            Width="481"
+            Height="415"
+            Margin="237,468,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            BorderBrush="White"
             Click="Apprenti_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/naruto_Apprenti.png" Stretch="UniformToFill" />
+                <ImageBrush ImageSource="/naruto_Apprenti.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button
-            Width="268"
-            Height="341"
-            Margin="0,359,0,0"
+            Width="485"
+            Height="415"
+            Margin="0,468,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="White"
             Click="Amateur_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Luffy_Amateur.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button
-            Width="269"
-            Height="341"
-            Margin="1337,359,0,0"
+            Width="484"
+            Height="415"
+            Margin="1202,468,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Pro_Click">
-            <Button.BorderBrush>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="Black" />
-                    <GradientStop Offset="1" Color="White" />
-                </LinearGradientBrush>
-            </Button.BorderBrush>
             <Button.Foreground>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="Black" />
@@ -113,22 +120,22 @@
             <Button.Background>
                 <ImageBrush
                     ImageSource="/Goku_Pro.png"
-                    Stretch="UniformToFill"
+                    Stretch="Uniform"
                     TileMode="None" />
             </Button.Background>
         </Button>
         <Label
             x:Name="Difficulté_facile"
-            Width="295"
+            Width="296"
             Height="86"
-            Margin="301,732,0,0"
+            Margin="330,359,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="APPRENTI"
             Cursor=""
             FontFamily="Algerian"
             FontSize="60"
-            Foreground="White">
+            Foreground="White" RenderTransformOrigin="0.53,0.611">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
@@ -137,14 +144,14 @@
             x:Name="Difficulté_moyen"
             Width="300"
             Height="86"
-            Margin="0,732,0,0"
+            Margin="0,359,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="AMATEUR"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699">
+            RenderTransformOrigin="0.493,0.699" Background="Transparent">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
@@ -153,14 +160,14 @@
             x:Name="Difficulté_difficile"
             Width="120"
             Height="86"
-            Margin="1412,732,0,0"
+            Margin="1384,359,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="PRO"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699">
+            RenderTransformOrigin="0.493,0.699" Background="#00000000">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
