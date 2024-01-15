@@ -41,6 +41,7 @@ namespace Jeux_SAE_1._01_1._02
             ChoixNiveau fenetreChoix = new ChoixNiveau();
             fenetreChoix.ShowDialog();
 
+
             if (fenetreChoix.DialogResult == true)
             {
                 difficulteActuelle = fenetreChoix.DifficulteChoisie;
@@ -105,15 +106,19 @@ namespace Jeux_SAE_1._01_1._02
 
                 //Ajout ennemie
 
+
+
+
+
                 ennemi = new Rectangle
                 {
-                    Width = 40,
-                    Height = 40,
+                    Width = 80,
+                    Height = 80,
                     Fill = Brushes.Yellow
                 };
 
-                Canvas.SetLeft(ennemi, canvas.ActualWidth / 2 - ennemi.Width / 2);
-                Canvas.SetTop(ennemi, 50);
+                Canvas.SetRight(ennemi, canvas.ActualWidth / 20 - ennemi.Width / 2 + 40);
+                Canvas.SetTop(ennemi, 20);
 
                 canvas.Children.Add(ennemi);
 
