@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -24,6 +25,10 @@ namespace Jeux_SAE_1._01_1._02
         private DateTime tempsLimite;
         private DateTime tempsEcoule;
         private DispatcherTimer spawnTimer;
+        private Rectangle ennemi;
+        private Rectangle projectileEnnemi;
+
+
 
         public MainWindow()
         {
@@ -95,6 +100,27 @@ namespace Jeux_SAE_1._01_1._02
                 objetsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 Canvas.SetTop(objetsTextBlock, 30);
                 canvas.Children.Add(objetsTextBlock);
+
+                //Ajout ennemie
+
+                ennemi = new Rectangle
+                {
+                    Width = 40,
+                    Height = 40,
+                    Fill = Brushes.Yellow
+                };
+
+                Canvas.SetLeft(ennemi, canvas.ActualWidth / 2 - ennemi.Width / 2);
+                Canvas.SetTop(ennemi, 50);
+
+                canvas.Children.Add(ennemi);
+
+                projectileEnnemi = new Rectangle
+                {
+                    Width = 10,
+                    Height = 10,
+                    Fill = Brushes.Red
+                };
 
                 ExecuterNiveau();
             }
@@ -268,7 +294,7 @@ namespace Jeux_SAE_1._01_1._02
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            double deplacement = 10;
+            double deplacement = 30;
 
             switch (e.Key)
             {
@@ -354,5 +380,42 @@ namespace Jeux_SAE_1._01_1._02
                 }
             }
         }
+
+        private void GameLoop(object sender, EventArgs e)
+        {
+            // ... (le code existant)
+
+            // Logique pour faire tirer le projectile par l'ennemi
+            if (random.Next(100) < 5) // Une chance de 5% de tirer à chaque tick (ajustez selon vos besoins)
+            {
+                ShootEnemyProjectile();
+            }
+        }
+
+        private void ShootEnemyProjectile()
+        {
+            Rectangle newEnemyProjectile = new Rectangle
+            {
+                Width = projectileEnnemi.Width,
+                Height = projectileEnnemi.Height,
+                Fill = projectileEnnemi.Fill.Clone()
+            };
+
+            Canvas.SetLeft(newEnemyProjectile, Canvas.GetLeft(ennemi) + ennemi.Width / 2 - newEnemyProjectile.Width / 2);
+            Canvas.SetTop(newEnemyProjectile, Canvas.GetTop(ennemi) + ennemi.Height);
+
+            canvas.Children.Add(newEnemyProjectile);
+
+            // Animation du projectile (par exemple, déplacement vers le bas)
+            DoubleAnimation animation = new DoubleAnimation
+            {
+                From = Canvas.GetTop(newEnemyProjectile),
+                To = canvas.ActualHeight,
+                Duration = TimeSpan.FromSeconds(2) // Ajustez la durée du déplacement
+            };
+
+            newEnemyProjectile.BeginAnimation(Canvas.TopProperty, animation);
+        }
     }
+
 }
