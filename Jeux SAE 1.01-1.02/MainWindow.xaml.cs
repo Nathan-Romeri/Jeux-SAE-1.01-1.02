@@ -177,7 +177,7 @@ namespace Jeux_SAE_1._01_1._02
                         {
                             Image = new Image
                             {
-                                Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory+"img\\item_collect3.png")),
+                                Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\item_collect3.png")),
                                 Width = 50, // Ajustez la largeur de l'image
                                 Height = 50, // Ajustez la hauteur de l'image
                             }
@@ -368,7 +368,7 @@ namespace Jeux_SAE_1._01_1._02
             if (objetsCollectes >= 10)
             {
                 timer.Stop();
-                AfficherMessageVictoireOuDefaite("Félicitations ! Vous avez gagné !");
+
             }
             else
             {
@@ -376,7 +376,7 @@ namespace Jeux_SAE_1._01_1._02
                 if (tempsEcoule >= tempsLimite)
                 {
                     timer.Stop();
-                    AfficherMessageVictoireOuDefaite("Désolé, vous avez perdu. Le temps est écoulé.");
+
                 }
             }
         }
