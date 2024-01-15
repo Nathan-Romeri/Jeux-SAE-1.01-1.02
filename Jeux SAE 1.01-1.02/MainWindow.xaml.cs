@@ -27,6 +27,7 @@ namespace Jeux_SAE_1._01_1._02
         private DispatcherTimer spawnTimer;
         private Rectangle ennemi;
         private Rectangle projectileEnnemi;
+       
 
 
 
@@ -421,6 +422,15 @@ namespace Jeux_SAE_1._01_1._02
             newEnemyProjectile.BeginAnimation(Canvas.TopProperty, animation);
         }
 
+        private void StartGameLoop()
+        {
+            CompositionTarget.Rendering += GameLoop;
+        }
+
+        private void StopGameLoop()
+        {
+            CompositionTarget.Rendering -= GameLoop;
+        }
 
 
 
