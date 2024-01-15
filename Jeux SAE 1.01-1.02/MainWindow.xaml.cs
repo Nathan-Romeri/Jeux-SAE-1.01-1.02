@@ -40,11 +40,12 @@ namespace Jeux_SAE_1._01_1._02
             {
                 difficulteActuelle = fenetreChoix.DifficulteChoisie;
 
-                // Initialisation du Canvas
+                // Initialisation :
+                //Canvas
                 canvas = new Canvas();
                 this.Content = canvas;
 
-                // Initialisation du générateur de nombres aléatoires
+                //Nombres aléatoires
                 random = new Random();
 
                 // Ajout de l'image en tant que fond du Canvas
@@ -56,7 +57,7 @@ namespace Jeux_SAE_1._01_1._02
                 personnage = new Rectangle();
                 personnage.Width = 150;
                 personnage.Height = 150;
-                personnage.Fill = Brushes.Red; // Vous pouvez utiliser une image à la place
+                personnage.Fill = Brushes.Red;
 
                 Canvas.SetLeft(personnage, 0);
                 Canvas.SetTop(personnage, 0);
@@ -201,13 +202,13 @@ namespace Jeux_SAE_1._01_1._02
             switch (difficulteActuelle)
             {
                 case NiveauDifficulte.Apprenti:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\naruto_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Amateur:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\luffy_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Pro:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\goku_perso_pixel.png", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
                     break;
                 default:
                     break;
