@@ -22,23 +22,50 @@
     <None Remove="fleche droite.jpg" />
     <None Remove="fleche gauche.jpg" />
     <None Remove="fleche haut.jpg" />
+    <None Remove="fond_ecran.jpg" />
     <None Remove="Fond_ecran_flouter.png" />
+    <None Remove="fond_écran.jpg" />
+    <None Remove="Goku_Pro.png" />
+    <None Remove="Luffy_Amateur.png" />
     <None Remove="Manga-Quest-10-01-2024.png" />
+    <None Remove="Manga_Quest_Logo.png" />
+    <None Remove="naruto_Apprenti.png" />
     <None Remove="naruto_PNG29.png" />
     <None Remove="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="23457-1-one-piece-luffy-transparent-background.png" />
-    <Resource Include="Dragon-Ball-Goku-PNG-Image.png" />
-    <Resource Include="fleche bas.jpg" />
-    <Resource Include="fleche droite.jpg" />
-    <Resource Include="fleche gauche.jpg" />
-    <Resource Include="fleche haut.jpg" />
-    <Resource Include="Fond_ecran_flouter.png" />
-    <Resource Include="Manga-Quest-10-01-2024.png" />
-    <Resource Include="naruto_PNG29.png" />
-    <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
+    <Resource Include="fleche bas.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fleche droite.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fleche gauche.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fleche haut.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fond_ecran.jpg" />
+    <Resource Include="Fond_ecran_flouter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Goku_Pro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Luffy_Amateur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Manga_Quest_Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="naruto_Apprenti.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

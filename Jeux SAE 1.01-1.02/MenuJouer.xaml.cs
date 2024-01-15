@@ -26,10 +26,10 @@ namespace Jeux_SAE_1._01_1._02
 
         private void boutonJouer_Click(object sender, RoutedEventArgs e)
         {
-            // Ouvrir la fenêtre de choix de niveau
-            ChoixNiveau fenetreChoix = new ChoixNiveau();
-            fenetreChoix.ShowDialog();
+            this.DialogResult = true;
+            this.Close(); // Fermer la fenêtre du menu de jeu
         }
+
 
         private void boutonQuitter_Click(object sender, RoutedEventArgs e)
         {

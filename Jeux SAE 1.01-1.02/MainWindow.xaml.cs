@@ -42,10 +42,10 @@ namespace Jeux_SAE_1._01_1._02
             ChoixNiveau fenetreChoix = new ChoixNiveau();
             fenetreChoix.ShowDialog();
 
-
             if (fenetreChoix.DialogResult == true)
             {
                 difficulteActuelle = fenetreChoix.DifficulteChoisie;
+
 
                 // Initialisation :
                 //Canvas
