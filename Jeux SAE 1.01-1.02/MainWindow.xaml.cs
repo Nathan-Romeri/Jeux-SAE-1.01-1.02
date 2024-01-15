@@ -202,13 +202,13 @@ namespace Jeux_SAE_1._01_1._02
             switch (difficulteActuelle)
             {
                 case NiveauDifficulte.Apprenti:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\naruto_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Amateur:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\luffy_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 case NiveauDifficulte.Pro:
-                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("", UriKind.RelativeOrAbsolute)));
+                    personnage.Fill = new ImageBrush(new BitmapImage(new Uri("P:\\SAE 1.01 -1.02\\Jeux SAE 1.01-1.02\\Jeux SAE 1.01-1.02\\img\\goku_perso_pixel.png", UriKind.RelativeOrAbsolute)));
                     break;
                 default:
                     break;

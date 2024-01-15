@@ -19,7 +19,7 @@
             VerticalAlignment="Center"
             Stroke="Black">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/Fond_ecran_flouter.png" />
+                <ImageBrush ImageSource="P:\SAE 1.01 -1.02\Jeux SAE 1.01-1.02\Jeux SAE 1.01-1.02\img\Fond_ecran_flouter.png" />
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle
@@ -31,9 +31,9 @@
             Stroke="Black"
             StrokeThickness="25">
             <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="Red" Offset="1"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset="1" Color="Red" />
                 </LinearGradientBrush>
             </Rectangle.Fill>
             <Rectangle.OpacityMask>
@@ -54,9 +54,9 @@
             FontSize="100"
             RenderTransformOrigin="0.733,0.526">
             <Label.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset="1" Color="White" />
                 </LinearGradientBrush>
             </Label.BorderBrush>
             <Label.Foreground>
@@ -72,9 +72,11 @@
             Height="341"
             Margin="314,359,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Click="Apprenti_Click" BorderBrush="White">
+            VerticalAlignment="Top"
+            BorderBrush="White"
+            Click="Apprenti_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/naruto_PNG29.png" Stretch="UniformToFill" />
+                <ImageBrush ImageSource="P:\SAE 1.01 -1.02\Jeux SAE 1.01-1.02\Jeux SAE 1.01-1.02\img\naruto_PNG29.png" Stretch="UniformToFill" />
             </Button.Background>
         </Button>
         <Button
@@ -82,9 +84,11 @@
             Height="341"
             Margin="0,359,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" Click="Amateur_Click" BorderBrush="White">
+            VerticalAlignment="Top"
+            BorderBrush="White"
+            Click="Amateur_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/23457-1-one-piece-luffy-transparent-background.png" Stretch="Uniform" />
+                <ImageBrush ImageSource="P:\SAE 1.01 -1.02\Jeux SAE 1.01-1.02\Jeux SAE 1.01-1.02\img\23457-1-one-piece-luffy-transparent-background.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button
@@ -92,22 +96,23 @@
             Height="341"
             Margin="1337,359,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Click="Pro_Click">
+            VerticalAlignment="Top"
+            Click="Pro_Click">
             <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset="1" Color="White" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
             <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset="1" Color="White" />
                 </LinearGradientBrush>
             </Button.Foreground>
             <Button.Background>
                 <ImageBrush
-                    ImageSource="/Dragon-Ball-Goku-PNG-Image.png"
+                    ImageSource="P:\SAE 1.01 -1.02\Jeux SAE 1.01-1.02\Jeux SAE 1.01-1.02\img\Dragon-Ball-Goku-PNG-Image.png"
                     Stretch="UniformToFill"
                     TileMode="None" />
             </Button.Background>
@@ -120,11 +125,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="APPRENTI"
+            Cursor=""
             FontFamily="Algerian"
             FontSize="60"
-            Foreground="White" Cursor="" >
+            Foreground="White">
             <Label.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect />
             </Label.Effect>
         </Label>
         <Label
@@ -138,9 +144,9 @@
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" >
+            RenderTransformOrigin="0.493,0.699">
             <Label.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect />
             </Label.Effect>
         </Label>
         <Label
@@ -154,9 +160,9 @@
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" >
+            RenderTransformOrigin="0.493,0.699">
             <Label.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect />
             </Label.Effect>
         </Label>
     </Grid>
