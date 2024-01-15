@@ -55,6 +55,19 @@
             FontFamily="Showcard Gothic"
             FontSize="48"
             Foreground="Red" />
+        <Button
+            x:Name="boutonQuitter_Copy"
+            Width="400"
+            Height="131"
+            Margin="132,830,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            Click="boutonQuitter_Click"
+            Content="Parametres"
+            FontFamily="Showcard Gothic"
+            FontSize="48"
+            Foreground="#FF00E843" />
 
     </Grid>
 </Window>
