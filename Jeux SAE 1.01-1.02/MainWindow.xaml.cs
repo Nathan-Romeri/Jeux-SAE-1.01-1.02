@@ -81,13 +81,11 @@ namespace Jeux_SAE_1._01_1._02
                 timer = new DispatcherTimer();
                 timer.Interval = TimeSpan.FromSeconds(1);
                 timer.Tick += Timer_Tick;
-                timer.Start();
 
                 // Configuration du timer pour le spawn aléatoire d'objets
                 spawnTimer = new DispatcherTimer();
-                spawnTimer.Interval = TimeSpan.FromSeconds(5); // Réglez le délai de spawn selon vos besoins
+                spawnTimer.Interval = TimeSpan.FromSeconds(0.2); // Réglez le délai de spawn selon vos besoins
                 spawnTimer.Tick += SpawnTimer_Tick;
-                spawnTimer.Start();
 
                 // Ajout du TextBlock pour le compteur de temps
                 tempsTextBlock = new TextBlock();
@@ -105,44 +103,30 @@ namespace Jeux_SAE_1._01_1._02
                 Canvas.SetTop(objetsTextBlock, 30);
                 canvas.Children.Add(objetsTextBlock);
 
-                //Ajout ennemie
-
-                Image ennemi = new Image
-                {
-                    Width = 100,
-                    Height = 100,
-                };
-
-                BitmapImage imageSource = new(new Uri("P:\\SAE 1.01 -1.02\\Jeux-SAE-1.01-1.02\\Jeux SAE 1.01-1.02\\img\\ennemis_naruto.png"));
-                ennemi.Source = imageSource;
-
-
-                Canvas.SetRight(ennemi, canvas.ActualWidth / 20 - ennemi.Width / 2 + 40);
-                Canvas.SetTop(ennemi, 20);
-
-                canvas.Children.Add(ennemi);
-
-                projectileEnnemi = new Rectangle
-                {
-                    Width = 10,
-                    Height = 10,
-                    Fill = Brushes.Red
-                };
-
                 ExecuterNiveau();
             }
         }
 
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Démarrez le timer avec un temps initial de 2 minutes.
+            tempsLimite = DateTime.Now.AddSeconds(120);
+            timer.Start();
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
+            // Mettez à jour le temps écoulé
+            tempsEcoule = DateTime.Now;
+
             TimeSpan tempsRestant = tempsLimite - tempsEcoule;
             tempsTextBlock.Text = $"Temps restant : {tempsRestant.Minutes:00}:{tempsRestant.Seconds:00}";
 
+            // Vérifiez si le temps imparti est écoulé
             if (tempsEcoule >= tempsLimite)
             {
-                // Le temps est écoulé, terminez le jeu ou passez au niveau suivant
                 timer.Stop();
-                // Ajoutez ici la logique pour passer au niveau suivant ou afficher le menu de choix de niveau
+                AfficherMessageVictoireOuDefaite("Temps écoulé. Vous avez perdu !");
             }
         }
 
@@ -168,10 +152,12 @@ namespace Jeux_SAE_1._01_1._02
                     {
                         objetsCollectes++;
 
-                        if (objetsCollectes >= 10)
+                        if (objetsCollectes >= 20)
                         {
                             timer.Stop();
-                            // Ajoutez ici la logique pour passer au niveau suivant ou afficher le menu de choix de niveau
+                            spawnTimer.Stop();
+                            AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
+                            return; // Sortez de la méthode après la victoire
                         }
 
                         objetsTextBlock.Text = $"Objets : {objetsCollectes}/20";
@@ -200,10 +186,12 @@ namespace Jeux_SAE_1._01_1._02
                 }
             }
 
+            // Vérifiez si le nombre d'objets collectés atteint 20
             if (objetsCollectes >= 20)
             {
                 timer.Stop();
-                // Ajoutez ici la logique pour passer au niveau suivant ou afficher le menu de choix de niveau
+                spawnTimer.Stop();
+                AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
             }
         }
 
@@ -246,6 +234,16 @@ namespace Jeux_SAE_1._01_1._02
                 default:
                     break;
             }
+            // Initialisation du compteur d'objets collectés
+            objetsCollectes = 0;
+
+            // Initialisation du temps
+            tempsLimite = DateTime.Now.AddMinutes(2); // 2 minutes de jeu
+
+            // Démarrage des timers après l'initialisation
+            timer.Start();
+            spawnTimer.Start();
+
             AjouterImageDuNiveau(difficulteActuelle);
         }
 
@@ -324,9 +322,50 @@ namespace Jeux_SAE_1._01_1._02
                 default:
                     break;
             }
+
+            // Vérifier les touches en diagonale
+            if (Keyboard.IsKeyDown(Key.Up) && Keyboard.IsKeyDown(Key.Right)) // Diagonale en haut à droite
+            {
+                if (Canvas.GetTop(personnage) - deplacement >= 0 && Canvas.GetLeft(personnage) + personnage.ActualWidth + deplacement <= canvas.ActualWidth)
+                {
+                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) - deplacement);
+                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) + deplacement);
+                }
+            }
+            else if (Keyboard.IsKeyDown(Key.Up) && Keyboard.IsKeyDown(Key.Left)) // Diagonale en haut à gauche
+            {
+                if (Canvas.GetTop(personnage) - deplacement >= 0 && Canvas.GetLeft(personnage) - deplacement >= 0)
+                {
+                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) - deplacement);
+                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) - deplacement);
+                }
+            }
+            else if (Keyboard.IsKeyDown(Key.Down) && Keyboard.IsKeyDown(Key.Right)) // Diagonale en bas à droite
+            {
+                if (Canvas.GetTop(personnage) + personnage.ActualHeight + deplacement <= canvas.ActualHeight && Canvas.GetLeft(personnage) + personnage.ActualWidth + deplacement <= canvas.ActualWidth)
+                {
+                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) + deplacement);
+                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) + deplacement);
+                }
+            }
+            else if (Keyboard.IsKeyDown(Key.Down) && Keyboard.IsKeyDown(Key.Left)) // Diagonale en bas à gauche
+            {
+                if (Canvas.GetTop(personnage) + personnage.ActualHeight + deplacement <= canvas.ActualHeight && Canvas.GetLeft(personnage) - deplacement >= 0)
+                {
+                    Canvas.SetTop(personnage, Canvas.GetTop(personnage) + deplacement);
+                    Canvas.SetLeft(personnage, Canvas.GetLeft(personnage) - deplacement);
+                }
+            }
         }
+
+
+
         private void AfficherMessageVictoireOuDefaite(string message)
         {
+            // Arrêtez tous les timers ici si nécessaire
+            timer.Stop();
+            spawnTimer.Stop();
+
             VictoireDefaiteDialog dialog = new VictoireDefaiteDialog(message);
             bool? result = dialog.ShowDialog();
 
