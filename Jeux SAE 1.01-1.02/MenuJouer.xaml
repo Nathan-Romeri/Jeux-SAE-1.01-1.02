@@ -55,15 +55,6 @@
             FontFamily="Showcard Gothic"
             FontSize="48"
             Foreground="Red" />
-        <Button
-            x:Name="ReglagesButton"
-            Width="114"
-            Height="96"
-            Margin="1725,56,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Button" />
-
 
     </Grid>
 </Window>
