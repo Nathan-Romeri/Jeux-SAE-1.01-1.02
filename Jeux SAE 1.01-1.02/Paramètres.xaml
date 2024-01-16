@@ -11,37 +11,37 @@ Height="1080" WindowStartupLocation="CenterScreen" WindowState="Maximized">
         <Grid.Background>
             <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Center" Height="362" VerticalAlignment="Center" Width="324" Fill="#FF9A9A9A"/>
-        <TextBlock HorizontalAlignment="Left" Margin="806,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Commandes :" Foreground="#FFE6FF00" TextDecorations="Underline"/>
-        <TextBlock HorizontalAlignment="Left" Margin="946,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic"><Run Language="fr-fr" Text="Haut"/></TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="26" Margin="913,462,0,0" VerticalAlignment="Top" Width="28">
+        <Rectangle HorizontalAlignment="Center" Height="622" VerticalAlignment="Center" Width="600" Fill="#FF9A9A9A" Stroke="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="702,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Commandes :" Foreground="#FFE6FF00" TextDecorations="Underline" Height="36" Width="168" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="946,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Width="47" FontSize="16"><Run Language="fr-fr" Text="Haut"/></TextBlock>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="904,456,0,0" VerticalAlignment="Top" Width="40">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche gauche.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Center" Height="26" Margin="0,490,0,0" VerticalAlignment="Top" Width="28">
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="949,456,0,0" VerticalAlignment="Top" Width="40">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche bas.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Center" Height="26" Margin="0,436,0,0" VerticalAlignment="Top" Width="28">
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="949,414,0,0" VerticalAlignment="Top" Width="40">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche haut.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="26" Margin="979,462,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="-0.286,0.617">
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="995,456,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.286,0.617">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche droite.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" Margin="1015,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Droite" RenderTransformOrigin="11.014,12.189"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Bas" Margin="0,521,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="861,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Gauche"/>
-        <TextBlock HorizontalAlignment="Left" Margin="806,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Volume :" Foreground="#FFFF1515" TextDecorations="Underline"/>
-        <Slider HorizontalAlignment="Left" Height="22" Margin="866,579,0,0" VerticalAlignment="Top" Width="193"/>
-        <Rectangle HorizontalAlignment="Center" Height="37" Margin="0,358,0,0" VerticalAlignment="Top" Width="176" Fill="Black"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,362,0,0" Width="152" FontFamily="Showcard Gothic" FontSize="24" Foreground="#FF05A725" Height="30"><Run Text="Param"/><Run Language="fr-fr" Text="ètres"/><LineBreak/><Run/></TextBlock>
-        <Button x:Name="boutonFermer" Content="Fermer" HorizontalAlignment="Center" Margin="0,665,0,0" VerticalAlignment="Top" FontFamily="Showcard Gothic" FontSize="16" Background="Black" BorderBrush="White" Foreground="#FF05A725" Click="boutonFermer_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1040,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Droite" RenderTransformOrigin="11.014,12.189" Width="64" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Bas" Margin="953,501,0,0" Width="36" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="833,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Gauche" Width="66" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="702,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Volume :" Foreground="#FFFF1515" TextDecorations="Underline" FontSize="24"/>
+        <Slider HorizontalAlignment="Center" Height="44" Margin="0,634,0,0" VerticalAlignment="Top" Width="238"/>
+        <Rectangle HorizontalAlignment="Center" Height="52" Margin="0,246,0,0" VerticalAlignment="Top" Width="516" Fill="Black"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,239,0,0" Width="318" FontFamily="Showcard Gothic" FontSize="48" Foreground="#FF05A725" Height="74"><Run Text="Param"/><Run Language="fr-fr" Text="ètres"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="boutonFermer" Content="Fermer" HorizontalAlignment="Left" Margin="912,721,0,0" VerticalAlignment="Top" FontFamily="Showcard Gothic" FontSize="16" Background="Black" BorderBrush="White" Foreground="#FF05A725" Click="boutonFermer_Click" Height="44" Width="114"/>
 
     </Grid>
 </Window>
