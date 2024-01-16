@@ -19,14 +19,18 @@ namespace Jeux_SAE_1._01_1._02
     /// </summary>
     public partial class Paramètres : Window
     {
-        public Paramètres()
+        private MenuJouer fenetreMenuJouer;
+
+        public Paramètres(MenuJouer menuJouer)
         {
             InitializeComponent();
+            fenetreMenuJouer = menuJouer;
         }
 
         private void boutonFermer_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); // Fermer la fenêtre des paramètres
+            this.Close();
+            fenetreMenuJouer.Show();
         }
     }
 }

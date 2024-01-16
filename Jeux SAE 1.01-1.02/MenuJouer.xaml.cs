@@ -40,16 +40,11 @@ namespace Jeux_SAE_1._01_1._02
             Application.Current.Shutdown();
         }
 
-     
+
 
         private void boutonParametres_Click(object sender, RoutedEventArgs e)
         {
-            if (fenetreParametres == null)
-            {
-                fenetreParametres = new Paramètres();
-                fenetreParametres.Closed += (s, args) => fenetreParametres = null; // Libérer la référence une fois la fenêtre fermée
-            }
-
+            Paramètres fenetreParametres = new Paramètres(this);
             fenetreParametres.ShowDialog();
         }
     }
