@@ -28,7 +28,7 @@ namespace Jeux_SAE_1._01_1._02
         private TextBlock messageTextBlock;
         private List<Projectile> projectiles;
         private Random random2;
-        private int maxProjectiles = 150; 
+        private int maxProjectiles = 8; 
 
 
 
