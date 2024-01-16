@@ -430,12 +430,13 @@ namespace Jeux_SAE_1._01_1._02
         }
         private void RejouerNiveau()
         {
-            canvas.Children.Remove(messageTextBlock);
+            ReinitialiserJeu();
         }
 
         private void RetourMenu()
         {
-            canvas.Children.Remove(messageTextBlock);
+            ReinitialiserJeu();
+
             AfficherChoixNiveau();
         }
 
@@ -527,6 +528,42 @@ namespace Jeux_SAE_1._01_1._02
                 projectiles.Add(projectile);
             }
         }
+
+        private void ReinitialiserJeu()
+        {
+            // Supprimez les projectiles existants
+            foreach (Projectile projectile in projectiles)
+            {
+                canvas.Children.Remove(projectile.GetRectangle());
+            }
+            projectiles.Clear();
+
+            // Réinitialisez le compteur d'objets collectés
+            objetsCollectes = 0;
+            objetsTextBlock.Text = "Objets : 0/20";
+
+            // Réinitialisez le temps
+            tempsLimite = DateTime.Now.AddMinutes(2);
+            timer.Start();
+
+            // Réinitialisez le message TextBlock s'il existe
+            if (canvas.Children.Contains(messageTextBlock))
+            {
+                canvas.Children.Remove(messageTextBlock);
+                messageTextBlock = null;
+            }
+
+            // Réinitialisez le personnage
+            Canvas.SetLeft(personnage, 0);
+            Canvas.SetTop(personnage, 0);
+
+            // Redémarrez le timer de spawn
+            spawnTimer.Start();
+
+            // Affichez les objets à nouveau
+            AjouterImageDuNiveau(difficulteActuelle);
+        }
+
 
 
 
