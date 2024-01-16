@@ -28,7 +28,7 @@ namespace Jeux_SAE_1._01_1._02
         private TextBlock messageTextBlock;
         private List<Projectile> projectiles;
         private Random random2;
-        private int maxProjectiles = 8;
+        private int maxProjectiles = 8; 
 
 
 
@@ -274,6 +274,13 @@ namespace Jeux_SAE_1._01_1._02
             }
             // Initialisation du compteur d'objets collectés
             objetsCollectes = 0;
+
+            /*
+            foreach (Rectangle x in myCanvas.Children.OfType<Rectangle>())
+{
+// traitement du rectangle de type tir joueur à déplacement
+if (x is Rectangle && (string)x.Tag == "bulletPlayer")
+            */
 
             // Initialisation du temps
             tempsLimite = DateTime.Now.AddMinutes(2); // 2 minutes de jeu
