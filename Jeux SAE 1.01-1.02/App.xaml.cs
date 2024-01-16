@@ -8,10 +8,9 @@ using System.Windows;
 
 namespace Jeux_SAE_1._01_1._02
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+  
     public partial class App : Application
     {
+       
     }
 }
