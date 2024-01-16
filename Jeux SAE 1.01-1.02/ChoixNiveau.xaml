@@ -24,12 +24,12 @@
         </Rectangle>
         <Rectangle
             x:Name="Rectangle_FondDifficulté"
-            Width="1500"
-            Height="750"
-            HorizontalAlignment="Left"
+            Width="1450"
+            Height="702"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Stroke="Black"
-            StrokeThickness="25" Margin="212,0,0,0">
+            StrokeThickness="25">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="Black" />
@@ -83,9 +83,9 @@
         </Label>
         <Button
             x:Name="rectangleApprenti"
-            Width="481"
-            Height="415"
-            Margin="237,468,0,0"
+            Width="466.67"
+            Height="390"
+            Margin="262,468,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Apprenti_Click">
@@ -94,8 +94,8 @@
             </Button.Background>
         </Button>
         <Button
-            Width="485"
-            Height="415"
+            Width="466.67"
+            Height="390"
             Margin="0,468,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -105,9 +105,9 @@
             </Button.Background>
         </Button>
         <Button
-            Width="484"
-            Height="415"
-            Margin="1202,468,0,0"
+            Width="467"
+            Height="390"
+            Margin="1193,468,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Pro_Click">
