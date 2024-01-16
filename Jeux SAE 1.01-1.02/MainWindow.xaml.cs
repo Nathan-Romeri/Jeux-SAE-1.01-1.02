@@ -27,7 +27,8 @@ namespace Jeux_SAE_1._01_1._02
         private DispatcherTimer spawnTimer;
         private Rectangle ennemi;
         private Rectangle projectileEnnemi;
-       
+        private TextBlock messageTextBlock;
+
 
 
 
@@ -366,31 +367,50 @@ namespace Jeux_SAE_1._01_1._02
             timer.Stop();
             spawnTimer.Stop();
 
+            // Supprimez l'ancien TextBlock s'il existe
+            if (canvas.Children.Contains(messageTextBlock))
+            {
+                canvas.Children.Remove(messageTextBlock);
+            }
+
+            // Créez et configurez le nouveau TextBlock
+            messageTextBlock = new TextBlock(); 
+            messageTextBlock.Text = message;
+            messageTextBlock.FontSize = 36;
+            messageTextBlock.FontFamily = new FontFamily("Showcard Gothic");
+            messageTextBlock.Foreground = Brushes.White;
+            messageTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            messageTextBlock.VerticalAlignment = VerticalAlignment.Center;
+            Canvas.SetZIndex(messageTextBlock, 1); // Placez-le au-dessus des autres éléments du Canvas
+
+            // Ajoutez le TextBlock au Canvas
+            canvas.Children.Add(messageTextBlock);
+
+            // Positionnez le TextBlock au centre du Canvas
+            Canvas.SetLeft(messageTextBlock, canvas.ActualWidth / 2 - messageTextBlock.ActualWidth / 2);
+            Canvas.SetTop(messageTextBlock, canvas.ActualHeight / 2 - messageTextBlock.ActualHeight / 2);
+
+            // Affichez la boîte de dialogue VictoireDefaiteDialog
             VictoireDefaiteDialog dialog = new VictoireDefaiteDialog(message);
             bool? result = dialog.ShowDialog();
 
             if (result == true)
             {
-                // L'utilisateur a choisi de rejouer
                 RejouerNiveau();
             }
             else
             {
-                // L'utilisateur a choisi de retourner au menu
                 RetourMenu();
             }
         }
-
         private void RejouerNiveau()
         {
-            // Ajoutez ici la logique pour réinitialiser le niveau
-            // (réinitialisation des objets, du personnage, du compteur d'objets, etc.)
+            canvas.Children.Remove(messageTextBlock);
         }
 
         private void RetourMenu()
         {
-            // Ajoutez ici la logique pour revenir au menu de choix de niveau
-            // (par exemple, montrer la boîte de dialogue de choix de niveau)
+            canvas.Children.Remove(messageTextBlock);
             AfficherChoixNiveau();
         }
 
@@ -402,11 +422,11 @@ namespace Jeux_SAE_1._01_1._02
             if (fenetreChoix.DialogResult == true)
             {
                 difficulteActuelle = fenetreChoix.DifficulteChoisie;
-                ExecuterNiveau(); // ou toute autre logique que vous souhaitez exécuter après avoir choisi le niveau
+                ExecuterNiveau(); 
             }
             else
             {
-                // L'utilisateur a annulé la sélection du niveau, ajoutez la logique appropriée ici
+                
             }
         }
         private void VerifierVictoire()

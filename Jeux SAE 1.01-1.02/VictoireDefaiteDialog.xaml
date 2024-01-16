@@ -6,14 +6,14 @@
     Width="1920"
     Height="1080">
     <Grid>
-        <!--  Rangée pour l'image  -->
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="317.6" />
             <RowDefinition Height="316" />
         </Grid.RowDefinitions>
 
-        <!--  Image en arrière-plan  -->
+
         <Rectangle
             Grid.RowSpan="3"
             Width="Auto"
@@ -41,7 +41,7 @@
             <StackPanel
                 Grid.Row="1"
                 Width="839"
-                Margin="0,0,0,404"
+                Margin="0,0,0,350"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 Orientation="Horizontal">
