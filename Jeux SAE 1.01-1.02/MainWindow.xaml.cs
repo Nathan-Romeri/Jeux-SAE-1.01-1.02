@@ -25,9 +25,10 @@ namespace Jeux_SAE_1._01_1._02
         private DateTime tempsLimite;
         private DateTime tempsEcoule;
         private DispatcherTimer spawnTimer;
-        private Rectangle ennemi;
-        private Rectangle projectileEnnemi;
         private TextBlock messageTextBlock;
+        private List<Projectile> projectiles;
+        private Random random2;
+        private int maxProjectiles = 8; // Changez 5 au nombre souhaité
 
 
 
@@ -56,7 +57,12 @@ namespace Jeux_SAE_1._01_1._02
                 //Nombres aléatoires
                 random = new Random();
 
-             
+                //Projectiles aléatoire
+                random2 = new Random();
+
+                // Initialisation de la liste des projectiles
+                projectiles = new List<Projectile>();
+
 
                 // Ajout de l'image en tant que fond du Canvas
                 string cheminImage = ObtenirCheminImageDuNiveau(difficulteActuelle);
@@ -184,6 +190,7 @@ namespace Jeux_SAE_1._01_1._02
                         Canvas.SetLeft(gameObject.Image, random.Next(0, (int)canvas.ActualWidth));
                         Canvas.SetTop(gameObject.Image, random.Next(0, (int)canvas.ActualHeight));
                     }
+                    
                 }
             }
 
@@ -194,10 +201,30 @@ namespace Jeux_SAE_1._01_1._02
                 spawnTimer.Stop();
                 AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
             }
+
+            foreach (Projectile projectile in projectiles)
+            {
+                double playerLeft = Canvas.GetLeft(personnage) + personnage.ActualWidth / 2;
+                double playerTop = Canvas.GetTop(personnage) + personnage.ActualHeight / 2;
+
+                projectile.Move(playerLeft, playerTop);
+            }
+
+            int currentProjectiles = projectiles.Count;
+
+            // Vérifiez si le nombre de projectiles est inférieur à la limite
+            if (currentProjectiles < maxProjectiles)
+            {
+                // Générez un projectile
+                GenerateProjectile();
+            }
+
+            GenerateProjectile();
+
         }
 
         private bool IsCollision(double left1, double top1, double width1, double height1,
-                           double left2, double top2, double width2, double height2)
+                           double left2, double top2, double width2, double height2, bool isProjectile = false)
         {
             // Vérifiez s'il y a une non-collision sur l'un des côtés
             if ((left1 + width1) < left2 || left1 > (left2 + width2) ||
@@ -209,7 +236,17 @@ namespace Jeux_SAE_1._01_1._02
             else
             {
                 // Collision
-                return true;
+                if (!isProjectile)
+                {
+                    // Handle collision with regular objects
+                    return true;
+                }
+                else
+                {
+                    // Handle collision with projectiles (if needed)
+                    // For now, let's assume projectiles don't collide with each other
+                    return false;
+                }
             }
         }
 
@@ -246,6 +283,7 @@ namespace Jeux_SAE_1._01_1._02
             spawnTimer.Start();
 
             AjouterImageDuNiveau(difficulteActuelle);
+
         }
 
         private void AjouterImageDuNiveau(NiveauDifficulte niveau)
@@ -283,20 +321,7 @@ namespace Jeux_SAE_1._01_1._02
             }
         }
 
-        private void ExecuterNiveauApprenti()
-        {
-            //Niveau Apprenti (Naruto)
-        }
-
-        private void ExecuterNiveauAmateur()
-        {
-            //Niveau Amateur (One Piece)
-        }
-
-        private void ExecuterNiveauPro()
-        {
-            //Niveau Pro (DBZ)
-        }
+     
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -447,52 +472,61 @@ namespace Jeux_SAE_1._01_1._02
             }
         }
 
-        private void GameLoop(object sender, EventArgs e)
+        public class Projectile
         {
-            // ... (le code existant)
+            private Canvas canvas;
+            private Rectangle projectileRect;
+            private double speed = 10; // Vitesse du projectile
 
-            // Logique pour faire tirer le projectile par l'ennemi
-            if (random.Next(100) < 5) // Une chance de 5% de tirer à chaque tick (ajustez selon vos besoins)
+            public Projectile(Canvas canvas, Random random)
             {
-                ShootEnemyProjectile();
+                this.canvas = canvas;
+                 
+                projectileRect = new Rectangle
+                {
+                    Width = 20,
+                    Height = 20,
+                    Fill = Brushes.Blue
+                };
+
+                // Add the projectile to the Canvas
+                canvas.Children.Add(projectileRect);
+
+                // Position the projectile randomly
+                Canvas.SetLeft(projectileRect, random.Next(0, (int)canvas.ActualWidth));
+                Canvas.SetTop(projectileRect, random.Next(0, (int)canvas.ActualHeight));
+            }
+
+            public void Move(double playerLeft, double playerTop)
+            {
+                // Calculez la direction du déplacement
+                double deltaX = playerLeft - Canvas.GetLeft(projectileRect);
+                double deltaY = playerTop - Canvas.GetTop(projectileRect);
+
+                // Normalisez la direction
+                double length = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                double directionX = deltaX / length;
+                double directionY = deltaY / length;
+
+                // Déplacez le projectile dans la direction normalisée
+                Canvas.SetLeft(projectileRect, Canvas.GetLeft(projectileRect) + directionX * speed);
+                Canvas.SetTop(projectileRect, Canvas.GetTop(projectileRect) + directionY * speed);
+            }
+
+            public Rectangle GetRectangle()
+            {
+                return projectileRect;
             }
         }
 
-        private void ShootEnemyProjectile()
+        private void GenerateProjectile()
         {
-            Rectangle newEnemyProjectile = new Rectangle
+            if (projectiles.Count < maxProjectiles)
             {
-                Width = projectileEnnemi.Width,
-                Height = projectileEnnemi.Height,
-                Fill = projectileEnnemi.Fill.Clone()
-            };
-
-            Canvas.SetLeft(newEnemyProjectile, Canvas.GetLeft(ennemi) + ennemi.Width / 2 - newEnemyProjectile.Width / 2);
-            Canvas.SetTop(newEnemyProjectile, Canvas.GetTop(ennemi) + ennemi.Height);
-
-            canvas.Children.Add(newEnemyProjectile);
-
-            // Animation du projectile (par exemple, déplacement vers le bas)
-            DoubleAnimation animation = new DoubleAnimation
-            {
-                From = Canvas.GetTop(newEnemyProjectile),
-                To = canvas.ActualHeight,
-                Duration = TimeSpan.FromSeconds(2) // Ajustez la durée du déplacement
-            };
-
-            newEnemyProjectile.BeginAnimation(Canvas.TopProperty, animation);
+                Projectile projectile = new Projectile(canvas, random2);
+                projectiles.Add(projectile);
+            }
         }
-
-        private void StartGameLoop()
-        {
-            CompositionTarget.Rendering += GameLoop;
-        }
-
-        private void StopGameLoop()
-        {
-            CompositionTarget.Rendering -= GameLoop;
-        }
-
 
 
 

@@ -8,7 +8,8 @@
     Title="Manga Quest"
     Width="1920"
     Height="1080"
+    KeyDown="Window_KeyDown"
     WindowStartupLocation="CenterScreen"
-    WindowState="Maximized" KeyDown="Window_KeyDown">
+    WindowState="Maximized">
 </Window>
-    
+
