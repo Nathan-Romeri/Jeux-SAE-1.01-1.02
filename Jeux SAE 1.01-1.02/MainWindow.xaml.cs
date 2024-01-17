@@ -75,8 +75,8 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Création du personnage
                 personnage = new Rectangle();
-                personnage.Width = 100;
-                personnage.Height = 100;
+                personnage.Width = 120;
+                personnage.Height = 120;
                 personnage.Fill = Brushes.Red;
 
                 Canvas.SetLeft(personnage, 680);
@@ -101,8 +101,9 @@ namespace Jeux_SAE_1._01_1._02
                 // Ajout du TextBlock pour le compteur de temps
                 tempsTextBlock = new TextBlock();
                 tempsTextBlock.FontSize = 30;
-                tempsTextBlock.Foreground = Brushes.Black;
+                tempsTextBlock.Foreground = Brushes.Red;
                 tempsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+                
                 Canvas.SetTop(tempsTextBlock, 2);
                 Canvas.SetLeft(tempsTextBlock, 680);
                 canvas.Children.Add(tempsTextBlock);
@@ -110,9 +111,10 @@ namespace Jeux_SAE_1._01_1._02
                 // Ajout du TextBlock pour le compteur d'objets
                 objetsTextBlock = new TextBlock();
                 objetsTextBlock.FontSize = 30;
-                objetsTextBlock.Foreground = Brushes.Black;
+                objetsTextBlock.Foreground = Brushes.Yellow;
                 objetsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-                Canvas.SetTop(objetsTextBlock, 2);
+                objetsTextBlock.FontFamily = new FontFamily("Showcard Gothic");
+                Canvas.SetTop(objetsTextBlock, 10);
                 canvas.Children.Add(objetsTextBlock);
 
                 ExecuterNiveau();
@@ -500,8 +502,8 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
                 projectileRect = new Rectangle
                 {
-                    Width = 200,
-                    Height = 200,
+                    Width = 250,
+                    Height = 250,
                     Fill = imageEnnemis
                 };
 

@@ -69,7 +69,7 @@
                     FontSize="46"
                     Foreground="Red" />
             </StackPanel>
-            <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\game-over-134053.mp3" x:Name="game_over"   />
+            <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\game-over-134053.mp3" x:Name="game_over" LoadedBehavior="Manual"  />
         </Grid>
         
     </Grid>
