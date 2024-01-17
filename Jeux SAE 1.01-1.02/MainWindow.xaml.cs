@@ -501,7 +501,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 {
                     Width = 20,
                     Height = 20,
-                    Fill = Brushes.Blue
+                    Fill = imageEnnemis
                 };
 
                 imageEnnemis.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg", UriKind.RelativeOrAbsolute));
