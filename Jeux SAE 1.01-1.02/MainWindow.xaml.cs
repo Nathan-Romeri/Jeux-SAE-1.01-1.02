@@ -28,7 +28,9 @@ namespace Jeux_SAE_1._01_1._02
         private TextBlock messageTextBlock;
         private List<Projectile> projectiles;
         private Random random2;
-        private int maxProjectiles = 8; 
+        private int maxProjectiles = 8;
+
+        
 
 
 
@@ -43,6 +45,8 @@ namespace Jeux_SAE_1._01_1._02
 
             ChoixNiveau fenetreChoix = new ChoixNiveau();
             fenetreChoix.ShowDialog();
+
+            
 
             if (fenetreChoix.DialogResult == true)
             {
@@ -490,13 +494,16 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             public Projectile(Canvas canvas, Random random)
             {
                 this.canvas = canvas;
-                 
+                ImageBrush imageEnnemis = new ImageBrush();
+
                 projectileRect = new Rectangle
                 {
-                    Width = 40,
-                    Height = 40,
-                    Fill = Brushes.Blue
+                    Width = 100,
+                    Height = 100,
+                    Fill = imageEnnemis,
                 };
+
+                imageEnnemis.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg", UriKind.RelativeOrAbsolute));
 
                 // Add the projectile to the Canvas
                 canvas.Children.Add(projectileRect);
