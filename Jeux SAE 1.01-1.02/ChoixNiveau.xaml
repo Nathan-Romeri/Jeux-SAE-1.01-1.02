@@ -175,5 +175,7 @@
                 <DropShadowEffect />
             </Label.Effect>
         </Label>
+        <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\the-final-boss-battle-158700.mp3
+" x:Name="blue_bird" LoadedBehavior="Manual"/>
     </Grid>
 </Window>
