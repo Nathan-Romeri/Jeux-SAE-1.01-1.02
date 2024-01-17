@@ -495,6 +495,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             public Projectile(Canvas canvas, Random random)
             {
                 this.canvas = canvas;
+                ImageBrush imageEnnemis = new ImageBrush();
 
                 projectileRect = new Rectangle
                 {
