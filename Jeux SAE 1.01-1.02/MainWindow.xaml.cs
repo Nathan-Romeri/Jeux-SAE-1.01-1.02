@@ -446,7 +446,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
         private void RetourMenu()
         {
             ReinitialiserJeu();
-
             AfficherChoixNiveau();
         }
 
