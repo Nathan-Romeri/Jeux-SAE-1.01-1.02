@@ -416,7 +416,8 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             messageTextBlock.Foreground = Brushes.White;
             messageTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
             messageTextBlock.VerticalAlignment = VerticalAlignment.Center;
-            Canvas.SetZIndex(messageTextBlock, 1); // Placez-le au-dessus des autres éléments du Canvas
+            Canvas.SetZIndex(messageTextBlock, 1); 
+            // Placez-le au-dessus des autres éléments du Canvas
 
             // Ajoutez le TextBlock au Canvas
             canvas.Children.Add(messageTextBlock);
@@ -446,7 +447,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
         private void RetourMenu()
         {
             ReinitialiserJeu();
-
             AfficherChoixNiveau();
         }
 
@@ -493,8 +493,8 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                  
                 projectileRect = new Rectangle
                 {
-                    Width = 20,
-                    Height = 20,
+                    Width = 40,
+                    Height = 40,
                     Fill = Brushes.Blue
                 };
 

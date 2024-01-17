@@ -67,6 +67,8 @@
             FontFamily="Showcard Gothic"
             FontSize="48"
             Foreground="#FF05A725" Click="boutonParametres_Click" />
+        <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\kpasi-music_naruto-shippuden-opening-03-blue-bird.mp3
+" x:Name="blue_bird" LoadedBehavior="Manual"/>
 
     </Grid>
 </Window>
