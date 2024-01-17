@@ -6,15 +6,15 @@
     xmlns:local="clr-namespace:Jeux_SAE_1._01_1._02"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ChoixNiveau"
-    Width="1920"
-    Height="1080"
+    Width="1440"
+    Height="900"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
     mc:Ignorable="d">
     <Grid>
         <Rectangle
-            Width="1920"
-            Height="1080"
+            Width="1440"
+            Height="900"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Stroke="Black">
@@ -24,8 +24,8 @@
         </Rectangle>
         <Rectangle
             x:Name="Rectangle_FondDifficulté"
-            Width="1450"
-            Height="700"
+            Width="1228"
+            Height="442"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Stroke="Black"
@@ -44,14 +44,14 @@
             </Rectangle.OpacityMask>
         </Rectangle>
         <Label
-            Width="1360"
-            Height="113"
-            Margin="0,209,0,0"
+            Width="1012"
+            Height="97"
+            Margin="0,221,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="CHOISIR LA DIFFICULTÉ"
             FontFamily="Copperplate Gothic Bold"
-            FontSize="100"
+            FontSize="72"
             RenderTransformOrigin="0.733,0.526">
             <Label.BorderBrush>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -83,9 +83,9 @@
         </Label>
         <Button
             x:Name="rectangleApprenti"
-            Width="467"
-            Height="390"
-            Margin="260,468,0,0"
+            Width="287"
+            Height="283"
+            Margin="195,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Apprenti_Click">
@@ -93,21 +93,21 @@
                 <ImageBrush ImageSource="/naruto_Apprenti.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
-        <Button
-            Width="466.67"
-            Height="390"
-            Margin="0,468,0,0"
+        <Button x:Name="luffy_bouton"
+            Width="336"
+            Height="289"
+            Margin="0,361,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Click="Amateur_Click">
+            Click="Amateur_Click" MouseEnter="luffy_bouton_MouseEnter">
             <Button.Background>
                 <ImageBrush ImageSource="/Luffy_Amateur.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button
-            Width="467"
-            Height="390"
-            Margin="1193,468,0,0"
+            Width="264"
+            Height="283"
+            Margin="958,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Pro_Click">
@@ -128,13 +128,13 @@
             x:Name="Difficulté_facile"
             Width="296"
             Height="86"
-            Margin="330,359,0,0"
+            Margin="214,306,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="APPRENTI"
             Cursor=""
             FontFamily="Algerian"
-            FontSize="60"
+            FontSize="48"
             Foreground="White"
             RenderTransformOrigin="0.53,0.611">
             <Label.Effect>
@@ -145,13 +145,13 @@
             x:Name="Difficulté_moyen"
             Width="300"
             Height="86"
-            Margin="0,359,0,0"
-            HorizontalAlignment="Center"
+            Margin="600,306,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="Transparent"
             Content="AMATEUR"
             FontFamily="Algerian"
-            FontSize="60"
+            FontSize="48"
             Foreground="White"
             RenderTransformOrigin="0.493,0.699">
             <Label.Effect>
@@ -162,13 +162,13 @@
             x:Name="Difficulté_difficile"
             Width="120"
             Height="86"
-            Margin="1384,359,0,0"
+            Margin="1030,306,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#00000000"
             Content="PRO"
             FontFamily="Algerian"
-            FontSize="60"
+            FontSize="48"
             Foreground="White"
             RenderTransformOrigin="0.493,0.699">
             <Label.Effect>

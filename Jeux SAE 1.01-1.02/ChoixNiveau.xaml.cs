@@ -20,11 +20,9 @@ namespace Jeux_SAE_1._01_1._02
     public partial class ChoixNiveau : Window
     {
         public NiveauDifficulte DifficulteChoisie { get; private set; }
-
         public ChoixNiveau()
         {
             InitializeComponent();
-
         }
 
         private void Apprenti_Click(object sender, RoutedEventArgs e)
@@ -43,6 +41,13 @@ namespace Jeux_SAE_1._01_1._02
         {
             DifficulteChoisie = NiveauDifficulte.Pro;
             this.DialogResult = true;
+        }
+
+        
+
+        private void luffy_bouton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
         }
     }
     public enum NiveauDifficulte

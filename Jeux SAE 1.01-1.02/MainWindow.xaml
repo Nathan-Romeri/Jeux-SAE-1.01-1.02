@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:Jeux_SAE_1._01_1._02"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Manga Quest"
-    Width="1920"
-    Height="1080"
+    Width="1440"
+    Height="900"
     KeyDown="Window_KeyDown"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized">
