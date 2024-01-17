@@ -214,8 +214,9 @@ namespace Jeux_SAE_1._01_1._02
                 double playerLeft = Canvas.GetLeft(personnage) + personnage.ActualWidth / 2;
                 double playerTop = Canvas.GetTop(personnage) + personnage.ActualHeight / 2;
 
-                projectile.Move(playerLeft, playerTop);
+                projectile.Move(playerLeft, playerTop, projectiles);
             }
+
 
             int currentProjectiles = projectiles.Count;
 
@@ -494,13 +495,12 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             public Projectile(Canvas canvas, Random random)
             {
                 this.canvas = canvas;
-                ImageBrush imageEnnemis = new ImageBrush();
 
                 projectileRect = new Rectangle
                 {
-                    Width = 100,
-                    Height = 100,
-                    Fill = imageEnnemis,
+                    Width = 20,
+                    Height = 20,
+                    Fill = Brushes.Blue
                 };
 
                 imageEnnemis.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg", UriKind.RelativeOrAbsolute));
@@ -513,7 +513,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 Canvas.SetTop(projectileRect, random.Next(0, (int)canvas.ActualHeight));
             }
 
-            public void Move(double playerLeft, double playerTop)
+            public void Move(double playerLeft, double playerTop, List<Projectile> otherProjectiles)
             {
                 // Calculez la direction du déplacement
                 double deltaX = playerLeft - Canvas.GetLeft(projectileRect);
@@ -525,8 +525,36 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 double directionY = deltaY / length;
 
                 // Déplacez le projectile dans la direction normalisée
-                Canvas.SetLeft(projectileRect, Canvas.GetLeft(projectileRect) + directionX * speed);
-                Canvas.SetTop(projectileRect, Canvas.GetTop(projectileRect) + directionY * speed);
+                double newLeft = Canvas.GetLeft(projectileRect) + directionX * speed;
+                double newTop = Canvas.GetTop(projectileRect) + directionY * speed;
+
+                // Vérifiez s'il y a une collision avec d'autres projectiles
+                if (!CheckCollision(otherProjectiles, newLeft, newTop))
+                {
+                    Canvas.SetLeft(projectileRect, newLeft);
+                    Canvas.SetTop(projectileRect, newTop);
+                }
+            }
+
+            // Méthode pour vérifier les collisions avec d'autres projectiles
+            private bool CheckCollision(List<Projectile> otherProjectiles, double newLeft, double newTop)
+            {
+                Rect newRect = new Rect(newLeft, newTop, projectileRect.Width, projectileRect.Height);
+
+                foreach (var otherProjectile in otherProjectiles)
+                {
+                    if (this != otherProjectile)
+                    {
+                        Rect otherRect = new Rect(Canvas.GetLeft(otherProjectile.projectileRect), Canvas.GetTop(otherProjectile.projectileRect), otherProjectile.projectileRect.Width, otherProjectile.projectileRect.Height);
+
+                        if (newRect.IntersectsWith(otherRect))
+                        {
+                            return true; // Collision détectée
+                        }
+                    }
+                }
+
+                return false; // Pas de collision
             }
 
             public Rectangle GetRectangle()
@@ -534,7 +562,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 return projectileRect;
             }
         }
-
         private void GenerateProjectile()
         {
             if (projectiles.Count < maxProjectiles)
