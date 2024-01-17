@@ -467,7 +467,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             if (objetsCollectes >= 10)
             {
                 timer.Stop();
-
             }
             else
             {
@@ -475,7 +474,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 if (tempsEcoule >= tempsLimite)
                 {
                     timer.Stop();
-
                 }
             }
         }
