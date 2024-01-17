@@ -186,9 +186,12 @@ namespace Jeux_SAE_1._01_1._02
                         // Ajoutez cet objet à la liste des enfants du Canvas
                         canvas.Children.Add(gameObject.Image);
 
-                        // Mise à jour de la position de l'objet collecté (vous pouvez ajuster cela selon vos besoins)
-                        Canvas.SetLeft(gameObject.Image, random.Next(0, (int)canvas.ActualWidth));
-                        Canvas.SetTop(gameObject.Image, random.Next(0, (int)canvas.ActualHeight));
+                        // Mise à jour de la position de l'objet collecté 
+                        double x = random.Next(0, (int)(canvas.ActualWidth - gameObject.Image.Width));
+                        double y = random.Next(0, (int)(canvas.ActualHeight - gameObject.Image.Height));
+
+                        Canvas.SetLeft(gameObject.Image, x);
+                        Canvas.SetTop(gameObject.Image, y);
                     }
                     
                 }
@@ -575,6 +578,16 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             Canvas.SetLeft(personnage, 0);
             Canvas.SetTop(personnage, 0);
 
+            // Supprimez l'image de fond du niveau
+            foreach (Image imageFond in canvas.Children.OfType<Image>())
+            {
+                // Vérifiez s'il s'agit de l'image de fond du niveau
+                if (imageFond.Source != null && imageFond.Source.ToString().Contains("fond"))
+                {
+                    canvas.Children.Remove(imageFond);
+                    break;  // Sortez après la suppression de la première image de fond
+                }
+            }
             // Redémarrez le timer de spawn
             spawnTimer.Start();
 
