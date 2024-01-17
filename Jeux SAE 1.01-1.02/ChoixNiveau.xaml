@@ -60,30 +60,30 @@
                 </LinearGradientBrush>
             </Label.BorderBrush>
             <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0"/>
-                    <GradientStop Color="#FF888888" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.147"/>
-                    <GradientStop Color="White" Offset="0.37"/>
-                    <GradientStop Color="#FFC5C5C5" Offset="0.513"/>
-                    <GradientStop Color="White" Offset="0.413"/>
-                    <GradientStop Color="White" Offset="0.273"/>
-                    <GradientStop Color="White" Offset="0.21"/>
-                    <GradientStop Color="White" Offset="0.753"/>
-                    <GradientStop Color="White" Offset="0.077"/>
-                    <GradientStop Color="White" Offset="0.817"/>
-                    <GradientStop Color="White" Offset="0.687"/>
-                    <GradientStop Color="White" Offset="0.323"/>
-                    <GradientStop Color="#FFC1C1C1" Offset="0.553"/>
-                    <GradientStop Color="White" Offset="0.47"/>
-                    <GradientStop Color="#FFD5D5D5" Offset="0.897"/>
-                    <GradientStop Color="#FF797979"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="0" Color="White" />
+                    <GradientStop Offset="1" Color="#FF888888" />
+                    <GradientStop Offset="0.147" Color="White" />
+                    <GradientStop Offset="0.37" Color="White" />
+                    <GradientStop Offset="0.513" Color="#FFC5C5C5" />
+                    <GradientStop Offset="0.413" Color="White" />
+                    <GradientStop Offset="0.273" Color="White" />
+                    <GradientStop Offset="0.21" Color="White" />
+                    <GradientStop Offset="0.753" Color="White" />
+                    <GradientStop Offset="0.077" Color="White" />
+                    <GradientStop Offset="0.817" Color="White" />
+                    <GradientStop Offset="0.687" Color="White" />
+                    <GradientStop Offset="0.323" Color="White" />
+                    <GradientStop Offset="0.553" Color="#FFC1C1C1" />
+                    <GradientStop Offset="0.47" Color="White" />
+                    <GradientStop Offset="0.897" Color="#FFD5D5D5" />
+                    <GradientStop Color="#FF797979" />
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Button
             x:Name="rectangleApprenti"
-            Width="469"
+            Width="467"
             Height="390"
             Margin="260,468,0,0"
             HorizontalAlignment="Left"
@@ -135,7 +135,8 @@
             Cursor=""
             FontFamily="Algerian"
             FontSize="60"
-            Foreground="White" RenderTransformOrigin="0.53,0.611">
+            Foreground="White"
+            RenderTransformOrigin="0.53,0.611">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
@@ -147,11 +148,12 @@
             Margin="0,359,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Background="Transparent"
             Content="AMATEUR"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" Background="Transparent">
+            RenderTransformOrigin="0.493,0.699">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
@@ -163,11 +165,12 @@
             Margin="1384,359,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="#00000000"
             Content="PRO"
             FontFamily="Algerian"
             FontSize="60"
             Foreground="White"
-            RenderTransformOrigin="0.493,0.699" Background="#00000000">
+            RenderTransformOrigin="0.493,0.699">
             <Label.Effect>
                 <DropShadowEffect />
             </Label.Effect>
