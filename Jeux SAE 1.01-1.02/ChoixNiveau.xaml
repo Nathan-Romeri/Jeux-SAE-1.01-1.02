@@ -83,9 +83,9 @@
         </Label>
         <Button
             x:Name="rectangleApprenti"
-            Width="287"
-            Height="283"
-            Margin="195,361,0,0"
+            Width="250"
+            Height="250"
+            Margin="214,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Apprenti_Click">
@@ -94,9 +94,9 @@
             </Button.Background>
         </Button>
         <Button x:Name="luffy_bouton"
-            Width="336"
-            Height="289"
-            Margin="0,361,0,0"
+            Width="250"
+            Height="250"
+            Margin="0,368,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Click="Amateur_Click" MouseEnter="luffy_bouton_MouseEnter">
@@ -105,9 +105,9 @@
             </Button.Background>
         </Button>
         <Button
-            Width="264"
-            Height="283"
-            Margin="958,361,0,0"
+            Width="250"
+            Height="250"
+            Margin="976,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Pro_Click">
@@ -128,7 +128,7 @@
             x:Name="Difficulté_facile"
             Width="296"
             Height="86"
-            Margin="214,306,0,0"
+            Margin="214,296,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="APPRENTI"
@@ -143,10 +143,10 @@
         </Label>
         <Label
             x:Name="Difficulté_moyen"
-            Width="300"
+            Width="250"
             Height="86"
-            Margin="600,306,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,296,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Background="Transparent"
             Content="AMATEUR"
@@ -162,7 +162,7 @@
             x:Name="Difficulté_difficile"
             Width="120"
             Height="86"
-            Margin="1030,306,0,0"
+            Margin="1041,296,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#00000000"
