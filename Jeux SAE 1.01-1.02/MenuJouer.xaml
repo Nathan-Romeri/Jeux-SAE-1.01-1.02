@@ -33,9 +33,9 @@
             x:Name="boutonJouer"
             Width="400"
             Height="131"
-            Margin="132,0,0,0"
+            Margin="66,306,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             Background="Black"
             Click="boutonJouer_Click"
             Content="Jouer"
@@ -46,7 +46,7 @@
             x:Name="boutonQuitter"
             Width="400"
             Height="131"
-            Margin="132,543,0,0"
+            Margin="66,469,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="Black"
@@ -59,7 +59,7 @@
             x:Name="boutonParametres"
             Width="400"
             Height="131"
-            Margin="132,709,0,0"
+            Margin="66,629,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="Black"
@@ -67,8 +67,7 @@
             FontFamily="Showcard Gothic"
             FontSize="48"
             Foreground="#FF05A725" Click="boutonParametres_Click" />
-        <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\kpasi-music_naruto-shippuden-opening-03-blue-bird.mp3
-" x:Name="blue_bird" LoadedBehavior="Manual"/>
+        <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\game-time-172907.mp3" x:Name="menu_jouer"  />
 
     </Grid>
 </Window>
