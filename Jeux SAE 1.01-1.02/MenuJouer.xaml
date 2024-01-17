@@ -21,8 +21,8 @@
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle
-            Width="729"
-            Height="305"
+            Width="532"
+            Height="233"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <Rectangle.Fill>
