@@ -28,7 +28,7 @@ namespace Jeux_SAE_1._01_1._02
         private TextBlock messageTextBlock;
         private List<Projectile> projectiles;
         private Random random2;
-        private int maxProjectiles = 8;
+        private int maxProjectiles = 1;
 
         
 
@@ -75,12 +75,12 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Création du personnage
                 personnage = new Rectangle();
-                personnage.Width = 120;
-                personnage.Height = 120;
+                personnage.Width = 100;
+                personnage.Height = 100;
                 personnage.Fill = Brushes.Red;
 
-                Canvas.SetLeft(personnage, 0);
-                Canvas.SetTop(personnage, 0);
+                Canvas.SetLeft(personnage, 680);
+                Canvas.SetTop(personnage, 100);
 
                 // Ajout du personnage au Canvas (après l'ajout de l'image de fond)
                 canvas.Children.Add(personnage);
@@ -100,18 +100,19 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Ajout du TextBlock pour le compteur de temps
                 tempsTextBlock = new TextBlock();
-                tempsTextBlock.FontSize = 16;
-                tempsTextBlock.Foreground = Brushes.White;
+                tempsTextBlock.FontSize = 30;
+                tempsTextBlock.Foreground = Brushes.Black;
                 tempsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-                Canvas.SetTop(tempsTextBlock, 10);
+                Canvas.SetTop(tempsTextBlock, 2);
+                Canvas.SetLeft(tempsTextBlock, 680);
                 canvas.Children.Add(tempsTextBlock);
 
                 // Ajout du TextBlock pour le compteur d'objets
                 objetsTextBlock = new TextBlock();
-                objetsTextBlock.FontSize = 16;
-                objetsTextBlock.Foreground = Brushes.White;
+                objetsTextBlock.FontSize = 30;
+                objetsTextBlock.Foreground = Brushes.Black;
                 objetsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-                Canvas.SetTop(objetsTextBlock, 30);
+                Canvas.SetTop(objetsTextBlock, 2);
                 canvas.Children.Add(objetsTextBlock);
 
                 ExecuterNiveau();
@@ -131,7 +132,7 @@ namespace Jeux_SAE_1._01_1._02
             tempsEcoule = DateTime.Now;
 
             TimeSpan tempsRestant = tempsLimite - tempsEcoule;
-            tempsTextBlock.Text = $"Temps restant : {tempsRestant.Minutes:00}:{tempsRestant.Seconds:00}";
+            tempsTextBlock.Text = $" {tempsRestant.Minutes:00}:{tempsRestant.Seconds:00}";
 
             // Vérifiez si le temps imparti est écoulé
             if (tempsEcoule >= tempsLimite)
@@ -325,11 +326,11 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             switch (niveau)
             {
                 case NiveauDifficulte.Apprenti:
-                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_vert.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\map_naruto.png";
                 case NiveauDifficulte.Amateur:
-                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_beige.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\map_luffy.png";
                 case NiveauDifficulte.Pro:
-                    return AppDomain.CurrentDomain.BaseDirectory + "img\\fond_bleu.jpg";
+                    return AppDomain.CurrentDomain.BaseDirectory + "img\\map_goku.png";
                 default:
                     // Cas par défaut, retourne une image par défaut
                     return "Images/Default.jpg";
@@ -490,7 +491,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
         {
             private Canvas canvas;
             private Rectangle projectileRect;
-            private double speed = 10; // Vitesse du projectile
+            private double speed = 40; // Vitesse du projectile
 
             public Projectile(Canvas canvas, Random random)
             {
@@ -499,8 +500,8 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
                 projectileRect = new Rectangle
                 {
-                    Width = 40,
-                    Height = 40,
+                    Width = 200,
+                    Height = 200,
                     Fill = imageEnnemis
                 };
 
