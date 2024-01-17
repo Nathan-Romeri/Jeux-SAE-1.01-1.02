@@ -535,6 +535,18 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 projectiles.Add(projectile);
             }
         }
+        private void SupprimerObjetsCollectes()
+        {
+            for (int i = 0; i < objetsCollectes; i++)
+            {
+                Image objetCollecte = canvas.Children.OfType<Image>().LastOrDefault();
+                if (objetCollecte != null)
+                {
+                    canvas.Children.Remove(objetCollecte);
+                }
+            }
+            objetsCollectes = 0;
+        }
 
         private void ReinitialiserJeu()
         {
@@ -545,6 +557,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             }
             projectiles.Clear();
 
+            SupprimerObjetsCollectes();
             // Réinitialisez le compteur d'objets collectés
             objetsCollectes = 0;
             objetsTextBlock.Text = "Objets : 0/20";
@@ -569,6 +582,10 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
             // Affichez les objets à nouveau
             AjouterImageDuNiveau(difficulteActuelle);
+
+            
+
+            
         }
 
 
