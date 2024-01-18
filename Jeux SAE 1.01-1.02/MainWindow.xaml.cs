@@ -480,22 +480,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             }
         }
 
-        private void AfficherChoixNiveau()
-        {
-            ChoixNiveau fenetreChoix = new ChoixNiveau();
-            fenetreChoix.ShowDialog();
-
-            if (fenetreChoix.DialogResult == true)
-            {
-                difficulteActuelle = fenetreChoix.DifficulteChoisie;
-                ExecuterNiveau(); 
-            }
-            else
-            {
-                
-            }
-        }
-
         public void InitialiserAvecNiveau(NiveauDifficulte niveau)
         {
             difficulteActuelle = niveau;
