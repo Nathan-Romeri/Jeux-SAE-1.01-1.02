@@ -151,6 +151,9 @@
     <None Update="img\naruto_PNG29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="img\Pause_Button_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="img\sticker-png-one-piece-monkey-the-luffy-thumbnail.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

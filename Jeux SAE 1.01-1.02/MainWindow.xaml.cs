@@ -29,8 +29,12 @@ namespace Jeux_SAE_1._01_1._02
         private List<Projectile> projectiles;
         private Random random2;
         private int maxProjectiles = 1;
-
         private ChoixNiveau fenetreChoix;
+        private Button pauseButton;
+
+
+        private bool jeuEnPause = false;
+        private DateTime tempsEnPause;
 
         public MainWindow()
         {
@@ -116,6 +120,21 @@ namespace Jeux_SAE_1._01_1._02
                 Canvas.SetTop(objetsTextBlock, 10);
                 canvas.Children.Add(objetsTextBlock);
 
+                Image pauseImage = new Image();
+                pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\Pause_Button_Icon.png", UriKind.RelativeOrAbsolute));
+                pauseImage.Width = 100;
+                pauseImage.Height = 100;
+
+                // Gérez l'événement Click ou MouseDown de l'image
+                pauseImage.Tag = "PauseButton";
+                pauseImage.MouseDown += PauseImage_MouseDown; 
+
+                // Ajoutez l'image au Canvas
+                canvas.Children.Add(pauseImage);
+
+                Canvas.SetLeft(pauseImage, 1320);
+                Canvas.SetTop(pauseImage, 10);
+
                 InitialiserNiveau();
             }
             
@@ -155,7 +174,7 @@ namespace Jeux_SAE_1._01_1._02
 
             foreach (UIElement element in elementsToRemove)
             {
-                if (element is Image objet)
+                if (element is Image objet && objet.Tag != "PauseButton")
                 {
                     double left1 = Canvas.GetLeft(objet);
                     double top1 = Canvas.GetTop(objet);
@@ -343,7 +362,50 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             }
         }
 
-     
+        private void PauseImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (!jeuEnPause)
+            {
+                // Mettez le jeu en pause
+                timer.Stop();
+                jeuEnPause = true;
+
+                // Enregistrez le temps actuel
+                tempsEnPause = DateTime.Now;
+
+                // Bloquez les déplacements du joueur en désactivant la gestion des touches
+                this.KeyDown -= Window_KeyDown;
+
+                // Mettez en pause les déplacements des projectiles
+                foreach (Projectile projectile in projectiles)
+                {
+                    projectile.Pause(); // Cela semble être une méthode invalide, probablement une coquille.
+                }
+            }
+            else
+            {
+                // Reprenez le jeu avec le temps initial
+                timer.Start();
+                jeuEnPause = false;
+
+                // Calculez la différence de temps écoulée pendant la pause
+                TimeSpan tempsPause = DateTime.Now - tempsEnPause;
+
+                // Ajoutez le temps de pause au temps initial
+                tempsLimite = tempsLimite.Add(tempsPause);
+
+                // Activez à nouveau la gestion des touches
+                this.KeyDown += Window_KeyDown;
+
+                // Reprenez les déplacements des projectiles
+                foreach (Projectile projectile in projectiles)
+                {
+                    projectile.Reprendre(); // Cela semble être une méthode invalide, probablement une coquille.
+                }
+            }
+        }
+
+
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -490,10 +552,11 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
         public class Projectile
         {
+            private bool enPause;
             private Canvas canvas;
             private Rectangle projectileRect;
             private double speed = 40; // Vitesse du projectile
-
+            
             public Projectile(Canvas canvas, Random random, string imagePath)
             {
                 this.canvas = canvas;
@@ -518,33 +581,39 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
             public void Move(double playerLeft, double playerTop, List<Projectile> otherProjectiles)
             {
-                // Calculez la direction du déplacement
-                double deltaX = playerLeft - Canvas.GetLeft(projectileRect);
-                double deltaY = playerTop - Canvas.GetTop(projectileRect);
-
-                // Normalisez la direction
-                double length = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
-                double directionX = deltaX / length;
-                double directionY = deltaY / length;
-
-                // Déplacez le projectile dans la direction normalisée
-                double newLeft = Canvas.GetLeft(projectileRect) + directionX * speed;
-                double newTop = Canvas.GetTop(projectileRect) + directionY * speed;
-
-                //Limite Canvas
-                double canvasWidth = canvas.ActualWidth;
-                double canvasHeight = canvas.ActualHeight;
-
-                newLeft = Math.Max(0, Math.Min(newLeft, canvasWidth - projectileRect.Width));
-                newTop = Math.Max(0, Math.Min(newTop, canvasHeight - projectileRect.Height));
-
-                // Vérifiez s'il y a une collision avec d'autres projectiles
-                if (!CheckCollision(otherProjectiles, newLeft, newTop))
+                if (!enPause)  // Vérifiez si le projectile n'est pas en pause
                 {
-                    Canvas.SetLeft(projectileRect, newLeft);
-                    Canvas.SetTop(projectileRect, newTop);
+                    // Calculez la direction du déplacement
+                    double deltaX = playerLeft - Canvas.GetLeft(projectileRect);
+                    double deltaY = playerTop - Canvas.GetTop(projectileRect);
+
+                    // Normalisez la direction
+                    double length = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                    double directionX = deltaX / length;
+                    double directionY = deltaY / length;
+
+                    // Déplacez le projectile dans la direction normalisée
+                    double newLeft = Canvas.GetLeft(projectileRect) + directionX * speed;
+                    double newTop = Canvas.GetTop(projectileRect) + directionY * speed;
+
+                    //Limite Canvas
+                    double canvasWidth = canvas.ActualWidth;
+                    double canvasHeight = canvas.ActualHeight;
+
+                    newLeft = Math.Max(0, Math.Min(newLeft, canvasWidth - projectileRect.Width));
+                    newTop = Math.Max(0, Math.Min(newTop, canvasHeight - projectileRect.Height));
+
+                    // Vérifiez s'il y a une collision avec d'autres projectiles
+                    if (!CheckCollision(otherProjectiles, newLeft, newTop))
+                    {
+                        Canvas.SetLeft(projectileRect, newLeft);
+                        Canvas.SetTop(projectileRect, newTop);
+                    }
                 }
+
             }
+
+
 
             // Méthode pour vérifier les collisions avec d'autres projectiles
             private bool CheckCollision(List<Projectile> otherProjectiles, double newLeft, double newTop)
@@ -566,7 +635,17 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
                 return false; // Pas de collision
             }
+            public void Pause()
+            {
+                // Mettez le projectile en pause
+                enPause = true;
+            }
 
+            public void Reprendre()
+            {
+                // Reprenez le projectile
+                enPause = false;
+            }
             public Rectangle GetRectangle()
             {
                 return projectileRect;
@@ -649,19 +728,29 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                     break;  // Sortez après la suppression de la première image de fond
                 }
             }
+
+            Image pauseImage = new Image();
+            pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\Pause_Button_Icon.png", UriKind.RelativeOrAbsolute));
+            pauseImage.Width = 100;
+            pauseImage.Height = 100;
+
+            // Gérez l'événement Click ou MouseDown de l'image
+            pauseImage.Tag = "PauseButton";
+            pauseImage.MouseDown += PauseImage_MouseDown; 
+
+            // Ajoutez l'image au Canvas
+            canvas.Children.Add(pauseImage);
+
+            Canvas.SetLeft(pauseImage, 1320);
+            Canvas.SetTop(pauseImage, 10);
             // Redémarrez le timer de spawn
             spawnTimer.Start();
 
             // Affichez les objets à nouveau
             AjouterImageDuNiveau(difficulteActuelle);
 
-            
-
-            
+ 
         }
-
-
-
 
     }
 

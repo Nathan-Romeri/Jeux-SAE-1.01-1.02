@@ -24,7 +24,6 @@ namespace Jeux_SAE_1._01_1._02
         public MenuJouer()
         {
             InitializeComponent();
-           
 
         }
 
@@ -39,8 +38,6 @@ namespace Jeux_SAE_1._01_1._02
             // Fermer toutes les fenêtres
             Application.Current.Shutdown();
         }
-
-
 
         private void boutonParametres_Click(object sender, RoutedEventArgs e)
         {

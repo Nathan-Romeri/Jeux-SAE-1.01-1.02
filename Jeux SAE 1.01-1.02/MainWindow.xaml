@@ -9,5 +9,6 @@
     Width="1440"
     Height="900"
     KeyDown="Window_KeyDown"
-    WindowStartupLocation="CenterScreen" ResizeMode="NoResize"/>
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen" />
 
