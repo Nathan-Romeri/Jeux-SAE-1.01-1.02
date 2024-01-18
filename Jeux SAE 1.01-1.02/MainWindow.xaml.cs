@@ -579,7 +579,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                         imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemie_naruto.png";
                         break;
                     case NiveauDifficulte.Amateur:
-                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg";
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis_luffy.jpg";
                         break;
                     case NiveauDifficulte.Pro:
                         imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis_goku.png";
