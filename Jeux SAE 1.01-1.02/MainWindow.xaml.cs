@@ -576,7 +576,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 switch (difficulteActuelle)
                 {
                     case NiveauDifficulte.Apprenti:
-                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis.png";
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemie_naruto.png";
                         break;
                     case NiveauDifficulte.Amateur:
                         imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg";
