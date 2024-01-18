@@ -472,21 +472,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 
             }
         }
-        private void VerifierVictoire()
-        {
-            if (objetsCollectes >= 10)
-            {
-                timer.Stop();
-            }
-            else
-            {
-                // Vérifier si le temps imparti est écoulé
-                if (tempsEcoule >= tempsLimite)
-                {
-                    timer.Stop();
-                }
-            }
-        }
+      
 
         public class Projectile
         {
@@ -575,7 +561,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 switch (difficulteActuelle)
                 {
                     case NiveauDifficulte.Apprenti:
-                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemie_naruto.png";
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis_naruto.png";
                         break;
                     case NiveauDifficulte.Amateur:
                         imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis_luffy.png";
