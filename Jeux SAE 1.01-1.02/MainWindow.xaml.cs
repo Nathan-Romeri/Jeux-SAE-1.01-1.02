@@ -213,7 +213,6 @@ namespace Jeux_SAE_1._01_1._02
             {
                 timer.Stop();
                 spawnTimer.Stop();
-                AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
             }
 
             foreach (Projectile projectile in projectiles)
