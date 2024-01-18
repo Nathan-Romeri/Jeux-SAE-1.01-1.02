@@ -5,8 +5,7 @@
     Title="Victoire ou Défaite"
     Width="1920"
     Height="1080"
-    WindowStartupLocation="CenterScreen"
-    WindowState="Maximized">
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
 
         <Grid.RowDefinitions>

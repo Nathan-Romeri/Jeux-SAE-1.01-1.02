@@ -9,7 +9,5 @@
     Width="1440"
     Height="900"
     KeyDown="Window_KeyDown"
-    WindowStartupLocation="CenterScreen"
-    WindowState="Maximized">
-</Window>
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize"/>
 

@@ -8,8 +8,7 @@
         Title="Parametres" 
         Width="1440"
         Height="900" 
-        WindowStartupLocation="CenterScreen" 
-        WindowState="Maximized">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
