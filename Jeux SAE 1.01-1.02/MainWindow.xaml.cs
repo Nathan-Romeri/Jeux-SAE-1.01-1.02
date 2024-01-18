@@ -495,7 +495,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             private Rectangle projectileRect;
             private double speed = 40; // Vitesse du projectile
 
-            public Projectile(Canvas canvas, Random random)
+            public Projectile(Canvas canvas, Random random, string imagePath)
             {
                 this.canvas = canvas;
                 ImageBrush imageEnnemis = new ImageBrush();
@@ -507,7 +507,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                     Fill = imageEnnemis
                 };
 
-                imageEnnemis.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis.png", UriKind.RelativeOrAbsolute));
+                imageEnnemis.ImageSource = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
 
                 // Add the projectile to the Canvas
                 canvas.Children.Add(projectileRect);
@@ -570,7 +570,24 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
         {
             if (projectiles.Count < maxProjectiles)
             {
-                Projectile projectile = new Projectile(canvas, random2);
+                string imagePath = "";
+
+                // Choisissez l'image appropriée en fonction du niveau actuel
+                switch (difficulteActuelle)
+                {
+                    case NiveauDifficulte.Apprenti:
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis.png";
+                        break;
+                    case NiveauDifficulte.Amateur:
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\gerard.jpg";
+                        break;
+                    case NiveauDifficulte.Pro:
+                        imagePath = AppDomain.CurrentDomain.BaseDirectory + "img\\ennemis.png";
+                        break;
+                        // Ajoutez d'autres cas si nécessaire pour d'autres niveaux
+                }
+
+                Projectile projectile = new Projectile(canvas, random2, imagePath);
                 projectiles.Add(projectile);
             }
         }
