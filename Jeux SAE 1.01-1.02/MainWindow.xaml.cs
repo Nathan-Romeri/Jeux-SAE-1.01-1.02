@@ -98,18 +98,19 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Ajout du TextBlock pour le compteur de temps
                 tempsTextBlock = new TextBlock();
-                tempsTextBlock.FontSize = 30;
+                tempsTextBlock.FontSize = 48;
                 tempsTextBlock.Foreground = Brushes.Red;
                 tempsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-                
+                tempsTextBlock.FontWeight = FontWeights.Bold;
+
                 Canvas.SetTop(tempsTextBlock, 2);
-                Canvas.SetLeft(tempsTextBlock, 680);
+                Canvas.SetLeft(tempsTextBlock, 640);
                 canvas.Children.Add(tempsTextBlock);
 
                 // Ajout du TextBlock pour le compteur d'objets
                 objetsTextBlock = new TextBlock();
                 objetsTextBlock.FontSize = 30;
-                objetsTextBlock.Foreground = Brushes.Yellow;
+                objetsTextBlock.Foreground = Brushes.Blue;
                 objetsTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 objetsTextBlock.FontFamily = new FontFamily("Showcard Gothic");
                 Canvas.SetTop(objetsTextBlock, 10);
