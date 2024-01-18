@@ -85,6 +85,9 @@
     <None Update="img\ennemis.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="img\ennemis_goku.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="img\fond_beige.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
