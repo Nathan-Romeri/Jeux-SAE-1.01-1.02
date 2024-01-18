@@ -531,34 +531,16 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 double newLeft = Canvas.GetLeft(projectileRect) + directionX * speed;
                 double newTop = Canvas.GetTop(projectileRect) + directionY * speed;
 
-                // Vérifiez s'il y a une collision avec d'autres projectiles
-                if (!CheckCollision(otherProjectiles, newLeft, newTop))
-                {
-                    Canvas.SetLeft(projectileRect, newLeft);
-                    Canvas.SetTop(projectileRect, newTop);
-                }
+                //Limite Canvas
+                double canvasWidth = canvas.ActualWidth;
+                double canvasHeight = canvas.ActualHeight;
+
+                newLeft = Math.Max(0, Math.Min(newLeft, canvasWidth - projectileRect.Width));
+                newTop = Math.Max(0, Math.Min(newTop, canvasHeight - projectileRect.Height));
+                
             }
 
-            // Méthode pour vérifier les collisions avec d'autres projectiles
-            private bool CheckCollision(List<Projectile> otherProjectiles, double newLeft, double newTop)
-            {
-                Rect newRect = new Rect(newLeft, newTop, projectileRect.Width, projectileRect.Height);
-
-                foreach (var otherProjectile in otherProjectiles)
-                {
-                    if (this != otherProjectile)
-                    {
-                        Rect otherRect = new Rect(Canvas.GetLeft(otherProjectile.projectileRect), Canvas.GetTop(otherProjectile.projectileRect), otherProjectile.projectileRect.Width, otherProjectile.projectileRect.Height);
-
-                        if (newRect.IntersectsWith(otherRect))
-                        {
-                            return true; // Collision détectée
-                        }
-                    }
-                }
-
-                return false; // Pas de collision
-            }
+     
 
             public Rectangle GetRectangle()
             {
