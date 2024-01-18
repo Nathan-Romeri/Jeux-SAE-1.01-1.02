@@ -209,7 +209,6 @@ namespace Jeux_SAE_1._01_1._02
             {
                 timer.Stop();
                 spawnTimer.Stop();
-                AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
             }
 
             foreach (Projectile projectile in projectiles)
@@ -454,7 +453,6 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
         private void RetourMenu()
         {
-            ReinitialiserJeu();
             AfficherChoixNiveau();
         }
 
@@ -470,7 +468,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             }
             else
             {
-                
+                ReinitialiserJeu();
             }
         }
         private void VerifierVictoire()
