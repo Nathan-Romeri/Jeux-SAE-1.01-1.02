@@ -30,10 +30,7 @@ namespace Jeux_SAE_1._01_1._02
         private Random random2;
         private int maxProjectiles = 1;
 
-        
-
-
-
+        private ChoixNiveau fenetreChoix;
 
         public MainWindow()
         {
@@ -43,10 +40,9 @@ namespace Jeux_SAE_1._01_1._02
             if (fenetreMenu.DialogResult == false)
                 Application.Current.Shutdown();
 
-            ChoixNiveau fenetreChoix = new ChoixNiveau();
+            fenetreChoix = new ChoixNiveau();
             fenetreChoix.ShowDialog();
 
-            
 
             if (fenetreChoix.DialogResult == true)
             {
@@ -67,6 +63,8 @@ namespace Jeux_SAE_1._01_1._02
                 // Initialisation de la liste des projectiles
                 projectiles = new List<Projectile>();
 
+                //Instance de fentre choix
+                fenetreChoix = new ChoixNiveau();
 
                 // Ajout de l'image en tant que fond du Canvas
                 string cheminImage = ObtenirCheminImageDuNiveau(difficulteActuelle);
@@ -117,8 +115,14 @@ namespace Jeux_SAE_1._01_1._02
                 Canvas.SetTop(objetsTextBlock, 10);
                 canvas.Children.Add(objetsTextBlock);
 
-                ExecuterNiveau();
+                InitialiserNiveau();
             }
+            
+        }
+
+        private void InitialiserNiveau()
+        {
+            ExecuterNiveau();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -166,7 +170,7 @@ namespace Jeux_SAE_1._01_1._02
                     {
                         objetsCollectes++;
 
-                        if (objetsCollectes >= 20)
+                        if (objetsCollectes >= 3)
                         {
                             timer.Stop();
                             spawnTimer.Stop();
@@ -454,8 +458,27 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
 
         private void RetourMenu()
         {
-            ReinitialiserJeu();
-            AfficherChoixNiveau();
+            // Cachez la fenêtre actuelle
+            this.Hide();
+
+            fenetreChoix.ShowDialog();
+
+            if (fenetreChoix.DialogResult == true)
+            {
+                // Obtenez le nouveau niveau sélectionné
+                difficulteActuelle = fenetreChoix.DifficulteChoisie;
+
+                // Réinitialisez le jeu avec le nouveau niveau
+                ReinitialiserJeu();
+
+                // Affichez la fenêtre actuelle
+                this.Show();
+            }
+            else
+            {
+                // Gérez le cas où l'utilisateur annule la sélection du niveau ou ferme la fenêtre de sélection
+                Application.Current.Shutdown();
+            }
         }
 
         private void AfficherChoixNiveau()
@@ -473,7 +496,13 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 
             }
         }
-      
+
+        public void InitialiserAvecNiveau(NiveauDifficulte niveau)
+        {
+            difficulteActuelle = niveau;
+            ReinitialiserJeu();  // Ajoutez cette méthode pour réinitialiser le jeu avec le nouveau niveau
+        }
+
 
         public class Projectile
         {
