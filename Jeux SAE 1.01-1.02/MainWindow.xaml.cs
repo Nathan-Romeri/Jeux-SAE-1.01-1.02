@@ -473,21 +473,7 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
                 
             }
         }
-        private void VerifierVictoire()
-        {
-            if (objetsCollectes >= 10)
-            {
-                timer.Stop();
-            }
-            else
-            {
-                // Vérifier si le temps imparti est écoulé
-                if (tempsEcoule >= tempsLimite)
-                {
-                    timer.Stop();
-                }
-            }
-        }
+      
 
         public class Projectile
         {
