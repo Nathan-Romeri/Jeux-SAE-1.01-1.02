@@ -82,7 +82,7 @@
     <None Update="img\Dragon-Ball-Goku-PNG-Image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="img\ennemis.png">
+    <None Update="img\ennemie_naruto.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="img\ennemis_goku.png">
