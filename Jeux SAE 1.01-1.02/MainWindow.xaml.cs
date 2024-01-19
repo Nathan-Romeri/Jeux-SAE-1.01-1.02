@@ -596,9 +596,9 @@ namespace Jeux_SAE_1._01_1._02
 
             public void Move(double playerLeft, double playerTop, List<Projectile> otherProjectiles)
             {
-                if (!enPause)  // Vérifiez si le projectile n'est pas en pause
+                if (!enPause)
                 {
-                    // Calculez la direction du déplacement
+                    // Calculez la direction du projectile
                     double deltaX = playerLeft - Canvas.GetLeft(projectileRect);
                     double deltaY = playerTop - Canvas.GetTop(projectileRect);
 
@@ -611,7 +611,7 @@ namespace Jeux_SAE_1._01_1._02
                     double newLeft = Canvas.GetLeft(projectileRect) + directionX * speed;
                     double newTop = Canvas.GetTop(projectileRect) + directionY * speed;
 
-                    //Limite Canvas
+                    // Limitez le projectile à l'intérieur du Canvas
                     double canvasWidth = canvas.ActualWidth;
                     double canvasHeight = canvas.ActualHeight;
 
@@ -625,14 +625,13 @@ namespace Jeux_SAE_1._01_1._02
                         Canvas.SetTop(projectileRect, newTop);
                     }
                 }
-
             }
 
 
 
             // Méthode pour vérifier les collisions avec d'autres projectiles
             private bool CheckCollision(List<Projectile> otherProjectiles, double newLeft, double newTop)
-            {
+                {
                 Rect newRect = new Rect(newLeft, newTop, projectileRect.Width, projectileRect.Height);
 
                 foreach (var otherProjectile in otherProjectiles)
