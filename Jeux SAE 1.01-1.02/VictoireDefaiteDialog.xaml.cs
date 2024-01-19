@@ -19,10 +19,12 @@ namespace Jeux_SAE_1._01_1._02
     /// </summary>
     public partial class VictoireDefaiteDialog : Window
     {
+        private string message;
         public VictoireDefaiteDialog(string message)
         {
             InitializeComponent();
-            messageText.Text = message;
+            this.message = message;
+            messageText.Text = this.message;
         }
 
         private void BtnRejouer_Click(object sender, RoutedEventArgs e)

@@ -26,6 +26,7 @@ namespace Jeux_SAE_1._01_1._02
         private DateTime tempsEcoule;
         private DispatcherTimer spawnTimer;
         private TextBlock messageTextBlock;
+        private TextBlock vieTextBlock;
         private List<Projectile> projectiles;
         private Random random2;
         private int maxProjectiles = 1;
@@ -35,6 +36,8 @@ namespace Jeux_SAE_1._01_1._02
 
         private bool jeuEnPause = false;
         private DateTime tempsEnPause;
+
+        private int viesRestantes;
 
         public MainWindow()
         {
@@ -66,6 +69,9 @@ namespace Jeux_SAE_1._01_1._02
 
                 // Initialisation de la liste des projectiles
                 projectiles = new List<Projectile>();
+
+                // Initialisez le nombre de vies
+                viesRestantes = 3;
 
                 //Instance de fentre choix
                 fenetreChoix = new ChoixNiveau();
@@ -119,6 +125,20 @@ namespace Jeux_SAE_1._01_1._02
                 objetsTextBlock.FontFamily = new FontFamily("Showcard Gothic");
                 Canvas.SetTop(objetsTextBlock, 10);
                 canvas.Children.Add(objetsTextBlock);
+
+                // Ajout du TextBlock pour le compteur  de vies
+                vieTextBlock = new TextBlock();
+                vieTextBlock.FontSize = 30;
+                vieTextBlock.Foreground = Brushes.Purple;
+                vieTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+                vieTextBlock.FontFamily = new FontFamily("Showcard Gothic");
+
+                // Initialiser le texte du compteur de vie dès le début
+                vieTextBlock.Text = $"Vie : {viesRestantes}/3";
+
+                Canvas.SetTop(vieTextBlock, 60);
+                Canvas.SetLeft(vieTextBlock, 10);
+                canvas.Children.Add(vieTextBlock);
 
                 Image pauseImage = new Image();
                 pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\Pause_Button_Icon.png", UriKind.RelativeOrAbsolute));
@@ -186,6 +206,9 @@ namespace Jeux_SAE_1._01_1._02
                     double width2 = personnage.ActualWidth;
                     double height2 = personnage.ActualHeight;
 
+                    // Mettez à jour le texte du compteur de vie
+                    vieTextBlock.Text = $"Vie : {viesRestantes}/3";
+
                     if (IsCollision(left1, top1, width1, height1, left2, top2, width2, height2))
                     {
                         objetsCollectes++;
@@ -194,7 +217,7 @@ namespace Jeux_SAE_1._01_1._02
                         {
                             timer.Stop();
                             spawnTimer.Stop();
-                            AfficherMessageVictoireOuDefaite("Bravo ! Vous avez collecté tous les objets à temps.");
+                            AfficherMessageVictoireOuDefaite("Vous avez gagné !");
                             return; // Sortez de la méthode après la victoire
                         }
 
@@ -224,7 +247,8 @@ namespace Jeux_SAE_1._01_1._02
                         Canvas.SetLeft(gameObject.Image, x);
                         Canvas.SetTop(gameObject.Image, y);
                     }
-                    
+
+                   
                 }
             }
 
@@ -239,6 +263,26 @@ namespace Jeux_SAE_1._01_1._02
             {
                 double playerLeft = Canvas.GetLeft(personnage) + personnage.ActualWidth / 2;
                 double playerTop = Canvas.GetTop(personnage) + personnage.ActualHeight / 2;
+
+                double projectileLeft = Canvas.GetLeft(projectile.GetRectangle());
+                double projectileTop = Canvas.GetTop(projectile.GetRectangle());
+
+                double distance = Math.Sqrt(Math.Pow(playerLeft - projectileLeft, 2) + Math.Pow(playerTop - projectileTop, 2));
+
+                if (distance < 20)
+                {
+                    viesRestantes--;
+
+                    if (viesRestantes == 0)
+                    {
+                        timer.Stop();
+                        spawnTimer.Stop();
+                        AfficherMessageVictoireOuDefaite("Vous avez perdu !");
+                        return; // Sortez de la méthode après la défaite
+                    }
+
+                    vieTextBlock.Text = $"Vie : {viesRestantes}/3";
+                }
 
                 projectile.Move(playerLeft, playerTop, projectiles);
             }
@@ -308,13 +352,6 @@ namespace Jeux_SAE_1._01_1._02
             }
             // Initialisation du compteur d'objets collectés
             objetsCollectes = 0;
-
-            /*
-            foreach (Rectangle x in myCanvas.Children.OfType<Rectangle>())
-{
-// traitement du rectangle de type tir joueur à déplacement
-if (x is Rectangle && (string)x.Tag == "bulletPlayer")
-            */
 
             // Initialisation du temps
             tempsLimite = DateTime.Now.AddMinutes(2); // 2 minutes de jeu
@@ -476,40 +513,18 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             timer.Stop();
             spawnTimer.Stop();
 
-            // Supprimez l'ancien TextBlock s'il existe
-            if (canvas.Children.Contains(messageTextBlock))
-            {
-                canvas.Children.Remove(messageTextBlock);
-            }
-
-            // Créez et configurez le nouveau TextBlock
-            messageTextBlock = new TextBlock(); 
-            messageTextBlock.Text = message;
-            messageTextBlock.FontSize = 36;
-            messageTextBlock.FontFamily = new FontFamily("Showcard Gothic");
-            messageTextBlock.Foreground = Brushes.White;
-            messageTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            messageTextBlock.VerticalAlignment = VerticalAlignment.Center;
-            Canvas.SetZIndex(messageTextBlock, 1); 
-            // Placez-le au-dessus des autres éléments du Canvas
-
-            // Ajoutez le TextBlock au Canvas
-            canvas.Children.Add(messageTextBlock);
-
-            // Positionnez le TextBlock au centre du Canvas
-            Canvas.SetLeft(messageTextBlock, canvas.ActualWidth / 2 - messageTextBlock.ActualWidth / 2);
-            Canvas.SetTop(messageTextBlock, canvas.ActualHeight / 2 - messageTextBlock.ActualHeight / 2);
-
             // Affichez la boîte de dialogue VictoireDefaiteDialog
             VictoireDefaiteDialog dialog = new VictoireDefaiteDialog(message);
             bool? result = dialog.ShowDialog();
 
             if (result == true)
             {
+                
                 RejouerNiveau();
             }
             else
             {
+               
                 RetourMenu();
             }
         }
@@ -702,6 +717,10 @@ if (x is Rectangle && (string)x.Tag == "bulletPlayer")
             // Réinitialisez le compteur d'objets collectés
             objetsCollectes = 0;
             objetsTextBlock.Text = "Objets : 0/20";
+
+            // Réinitialisez le compteur de vies
+            viesRestantes = 3;
+            vieTextBlock.Text = $"Vie : {viesRestantes}/3";
 
             // Réinitialisez le temps
             tempsLimite = DateTime.Now.AddMinutes(2);

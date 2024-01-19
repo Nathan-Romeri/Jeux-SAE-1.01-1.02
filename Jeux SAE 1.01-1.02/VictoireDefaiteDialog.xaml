@@ -6,70 +6,13 @@
     Width="1440"
     Height="900"
     WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
+    </Window.Background>
     <Grid>
+        <TextBlock x:Name="messageText" TextWrapping="Wrap" Margin="467,388,467,427" FontSize="36" TextAlignment="Center" FontWeight="Bold" FontFamily="Showcard Gothic" Foreground="#FFED0A0A" Background="White" Opacity="0.5" LineHeight="9"/>
+        <Button Content="Rejouer" Click="BtnRejouer_Click" Margin="303,494,803,250" Background="Black" Foreground="#FF95E480" BorderBrush="Black" FontSize="36" FontFamily="Showcard Gothic"/>
+        <Button Content="Retour au Menu" Click="BtnRetourMenu_Click" Margin="807,498,299,250" Foreground="#FFC7B81F" BorderBrush="Black" Background="Black" FontSize="36" FontFamily="Showcard Gothic"/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="317.6" />
-            <RowDefinition Height="316" />
-        </Grid.RowDefinitions>
-
-
-        <Rectangle
-            Grid.RowSpan="3"
-            Width="Auto"
-            Height="Auto">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Fond_ecran_flouter.png" />
-            </Rectangle.Fill>
-        </Rectangle>
-
-
-        <Grid Grid.RowSpan="3" Margin="0,430,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
-
-            <TextBlock
-                x:Name="messageText"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="20" />
-
-
-            <StackPanel
-                Grid.Row="1"
-                Width="839"
-                Margin="0,0,0,350"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"
-                Orientation="Horizontal">
-                <Button
-                    Name="btnRejouer"
-                    Width="400"
-                    Height="203"
-                    Margin="0,0,40,0"
-                    Background="Black"
-                    Click="BtnRejouer_Click"
-                    Content="Rejouer"
-                    FontFamily="Showcard Gothic"
-                    FontSize="48"
-                    Foreground="#FFF1FF00" />
-                <Button
-                    x:Name="btnRetourMenu"
-                    Width="400"
-                    Height="200"
-                    Background="Black"
-                    Click="BtnRetourMenu_Click"
-                    Content="Retour au Menu"
-                    FontFamily="Showcard Gothic"
-                    FontSize="46"
-                    Foreground="Red" />
-            </StackPanel>
-            <MediaElement Height="100" Width="100" Margin="1330,8,10,776" Source="p:\sae 1.01 -1.02\jeux-sae-1.01-1.02\jeux sae 1.01-1.02\audio\game-over-134053.mp3" x:Name="game_over" LoadedBehavior="Manual"  />
-        </Grid>
-        
     </Grid>
 </Window>
