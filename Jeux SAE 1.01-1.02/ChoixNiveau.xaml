@@ -89,7 +89,7 @@
             VerticalAlignment="Top"
             Click="Apprenti_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/naruto_pixel.png" Stretch="Uniform" />
+                <ImageBrush ImageSource="/naruto_perso_pixel.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button x:Name="luffy_bouton"

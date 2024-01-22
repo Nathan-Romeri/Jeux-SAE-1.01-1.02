@@ -30,6 +30,7 @@
     <None Remove="luffy_perso_pixel.png" />
     <None Remove="Manga-Quest-10-01-2024.png" />
     <None Remove="Manga_Quest_Logo.png" />
+    <None Remove="naruto_perso_pixel.png" />
     <None Remove="naruto_PNG29.png" />
     <None Remove="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
@@ -59,6 +60,7 @@
     <Resource Include="Manga_Quest_Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="naruto_perso_pixel.png" />
     <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
