@@ -89,7 +89,7 @@
             VerticalAlignment="Top"
             Click="Apprenti_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/naruto_Apprenti.png" Stretch="Uniform" />
+                <ImageBrush ImageSource="/naruto_pixel.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button x:Name="luffy_bouton"
@@ -100,7 +100,7 @@
             VerticalAlignment="Top"
             Click="Amateur_Click" MouseEnter="luffy_bouton_MouseEnter">
             <Button.Background>
-                <ImageBrush ImageSource="/Luffy_Amateur.png" Stretch="Uniform" />
+                <ImageBrush ImageSource="/luffy_perso_pixel.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Button
@@ -118,7 +118,7 @@
             </Button.Foreground>
             <Button.Background>
                 <ImageBrush
-                    ImageSource="/Goku_Pro.png"
+                    ImageSource="/goku_perso_pixel.png"
                     Stretch="Uniform"
                     TileMode="None" />
             </Button.Background>
