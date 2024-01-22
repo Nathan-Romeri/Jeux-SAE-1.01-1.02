@@ -11,7 +11,7 @@
     </Window.Background>
     <Grid>
         <Grid.Background>
-            <ImageBrush/>
+            <ImageBrush ImageSource="/fond_ecran.png"/>
         </Grid.Background>
         <TextBlock x:Name="messageText" TextWrapping="Wrap" Margin="467,388,467,427" FontSize="36" TextAlignment="Center" FontWeight="Bold" FontFamily="Showcard Gothic" Foreground="#FFED0A0A" Background="White" Opacity="0.5" LineHeight="9"/>
         <Button Content="Rejouer" Click="BtnRejouer_Click" Margin="303,494,803,250" Background="Black" Foreground="#FF95E480" BorderBrush="Black" FontSize="36" FontFamily="Showcard Gothic"/>

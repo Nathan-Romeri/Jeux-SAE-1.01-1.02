@@ -16,7 +16,7 @@
         <Rectangle HorizontalAlignment="Center" Height="622" VerticalAlignment="Center" Width="600" Fill="#FF9A9A9A" Stroke="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="462,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Commandes :" Foreground="#FFE6FF00" TextDecorations="Underline" Height="36" Width="168" FontSize="24"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Width="48" FontSize="16"><Run Language="fr-fr" Text="Haut"/></TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="40" Margin="655,357,0,0" VerticalAlignment="Top" Width="40">
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="655,362,0,0" VerticalAlignment="Top" Width="40">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche gauche.jpg"/>
             </Rectangle.Fill>
@@ -31,14 +31,14 @@
                 <ImageBrush ImageSource="/fleche haut.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="40" Margin="745,357,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.286,0.617">
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="745,362,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.286,0.617">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/fleche droite.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" Margin="790,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Droite" RenderTransformOrigin="11.014,12.189" Width="64" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="790,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Droite" RenderTransformOrigin="11.014,12.189" Width="64" FontSize="16"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Bas" Margin="0,402,0,0" Width="36" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="584,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Gauche" Width="66" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="584,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF000EE8" FontFamily="Showcard Gothic" Text="Gauche" Width="66" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="462,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Volume :" Foreground="#FFFF1515" TextDecorations="Underline" FontSize="24"/>
         <Slider HorizontalAlignment="Left" Height="44" Margin="584,535,0,0" VerticalAlignment="Top" Width="238"/>
         <Rectangle HorizontalAlignment="Center" Height="46" Margin="0,144,0,0" VerticalAlignment="Top" Width="516" Fill="Black"/>

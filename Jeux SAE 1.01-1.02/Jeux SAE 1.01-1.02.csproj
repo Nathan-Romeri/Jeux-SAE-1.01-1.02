@@ -22,17 +22,14 @@
     <None Remove="fleche droite.jpg" />
     <None Remove="fleche gauche.jpg" />
     <None Remove="fleche haut.jpg" />
+    <None Remove="fond_ecran.png" />
     <None Remove="Fond_ecran_flouter.png" />
     <None Remove="fond_écran.jpg" />
-    <None Remove="fond_écran.png" />
     <None Remove="goku_perso_pixel.png" />
-    <None Remove="Goku_Pro.png" />
     <None Remove="Luffy_Amateur.png" />
     <None Remove="luffy_perso_pixel.png" />
     <None Remove="Manga-Quest-10-01-2024.png" />
     <None Remove="Manga_Quest_Logo.png" />
-    <None Remove="naruto_Apprenti.png" />
-    <None Remove="naruto_pixel.png" />
     <None Remove="naruto_PNG29.png" />
     <None Remove="wallpapersden.com_jump-force-2019_1920x1080.jpg" />
   </ItemGroup>
@@ -50,16 +47,11 @@
     <Resource Include="fleche haut.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="fond_ecran.png" />
     <Resource Include="Fond_ecran_flouter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="fond_écran.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="goku_perso_pixel.png" />
-    <Resource Include="Goku_Pro.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Luffy_Amateur.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -67,10 +59,6 @@
     <Resource Include="Manga_Quest_Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="naruto_Apprenti.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="naruto_pixel.png" />
     <Resource Include="wallpapersden.com_jump-force-2019_1920x1080.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

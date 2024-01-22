@@ -90,7 +90,7 @@ namespace Jeux_SAE_1._01_1._02
                 // CREATION DU PERSONNAGE
                 personnage = new Rectangle();
                 personnage.Width = 120;
-                personnage.Height = 120;
+                personnage.Height = 140;
                 personnage.Fill = Brushes.Red;
                 Canvas.SetLeft(personnage, 680);
                 Canvas.SetTop(personnage, 100);
