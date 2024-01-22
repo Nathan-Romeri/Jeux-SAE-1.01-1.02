@@ -22,7 +22,6 @@
     <None Remove="fleche droite.jpg" />
     <None Remove="fleche gauche.jpg" />
     <None Remove="fleche haut.jpg" />
-    <None Remove="fond_ecran.jpg" />
     <None Remove="Fond_ecran_flouter.png" />
     <None Remove="fond_écran.jpg" />
     <None Remove="fond_écran.png" />
@@ -51,11 +50,12 @@
     <Resource Include="fleche haut.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="fond_ecran.jpg" />
     <Resource Include="Fond_ecran_flouter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="fond_écran.png" />
+    <Resource Include="fond_écran.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="goku_perso_pixel.png" />
     <Resource Include="Goku_Pro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
