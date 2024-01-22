@@ -26,7 +26,6 @@
     <None Remove="Fond_ecran_flouter.png" />
     <None Remove="fond_écran.jpg" />
     <None Remove="Goku_Pro.png" />
-    <None Remove="img\Shuriken_Projectile.gif" />
     <None Remove="Luffy_Amateur.png" />
     <None Remove="Manga-Quest-10-01-2024.png" />
     <None Remove="Manga_Quest_Logo.png" />
@@ -53,9 +52,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Goku_Pro.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="img\Shuriken_Projectile.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Luffy_Amateur.png">
@@ -94,19 +90,7 @@
     <None Update="img\ennemis_naruto.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="img\fond_beige.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="img\fond_bleu.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="img\Fond_ecran_flouter.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="img\fond_vert.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="img\gerard.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="img\goku_perso_pixel.png">
@@ -137,9 +121,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="img\Naruto Shippuden, free png image.jfif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="img\Naruto-Shippuden_-free-png-image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="img\naruto_perso_pixel.png">

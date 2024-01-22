@@ -14,28 +14,37 @@ namespace Jeux_SAE_1._01_1._02
 {
     public partial class MainWindow : Window
     {
-        private NiveauDifficulte difficulteActuelle;
+        
         private Canvas canvas;
         private Rectangle personnage;
         private int objetsCollectes;
-        private DispatcherTimer timer;
         private Random random;
+
         private TextBlock tempsTextBlock;
         private TextBlock objetsTextBlock;
+
         private DateTime tempsLimite;
         private DateTime tempsEcoule;
+
+        private NiveauDifficulte difficulteActuelle;
+
+        private DispatcherTimer timer;
         private DispatcherTimer spawnTimer;
+
         private TextBlock messageTextBlock;
         private TextBlock vieTextBlock;
+
         private List<Projectile> projectiles;
         private Random random2;
         private int maxProjectiles = 1;
-        private ChoixNiveau fenetreChoix;
+
         private Button pauseButton;
         private bool jeuEnPause = false;
         private DateTime tempsEnPause;
+
         private int viesRestantes;
 
+        private ChoixNiveau fenetreChoix;
         public MainWindow()
         {
             MenuJouer fenetreMenu = new();
@@ -409,7 +418,7 @@ namespace Jeux_SAE_1._01_1._02
                 // Mettez en pause les déplacements des projectiles
                 foreach (Projectile projectile in projectiles)
                 {
-                    projectile.Pause(); // Cela semble être une méthode invalide, probablement une coquille.
+                    projectile.Pause(); 
                 }
             }
             else
@@ -687,7 +696,7 @@ namespace Jeux_SAE_1._01_1._02
             objetsCollectes = 0;
         }
 
-        //REINTIALISATION DU NIVEAU
+        //REINTIALISATION DU JEU
         private void ReinitialiserJeu()
         {
             foreach (Projectile projectile in projectiles)
