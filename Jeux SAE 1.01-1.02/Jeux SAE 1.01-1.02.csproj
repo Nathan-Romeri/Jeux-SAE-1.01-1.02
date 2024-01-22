@@ -25,6 +25,7 @@
     <None Remove="fond_ecran.jpg" />
     <None Remove="Fond_ecran_flouter.png" />
     <None Remove="fond_écran.jpg" />
+    <None Remove="fond_écran.png" />
     <None Remove="goku_perso_pixel.png" />
     <None Remove="Goku_Pro.png" />
     <None Remove="img\Shuriken_Projectile.gif" />
@@ -55,6 +56,7 @@
     <Resource Include="Fond_ecran_flouter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="fond_écran.png" />
     <Resource Include="goku_perso_pixel.png" />
     <Resource Include="Goku_Pro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -18,7 +18,7 @@
             VerticalAlignment="Center"
             Stroke="Black">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/Fond_ecran_flouter.png" />
+                <ImageBrush ImageSource="/fond_écran.png" />
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle

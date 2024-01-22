@@ -10,6 +10,9 @@
         <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
     </Window.Background>
     <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <TextBlock x:Name="messageText" TextWrapping="Wrap" Margin="467,388,467,427" FontSize="36" TextAlignment="Center" FontWeight="Bold" FontFamily="Showcard Gothic" Foreground="#FFED0A0A" Background="White" Opacity="0.5" LineHeight="9"/>
         <Button Content="Rejouer" Click="BtnRejouer_Click" Margin="303,494,803,250" Background="Black" Foreground="#FF95E480" BorderBrush="Black" FontSize="36" FontFamily="Showcard Gothic"/>
         <Button Content="Retour au Menu" Click="BtnRetourMenu_Click" Margin="807,498,299,250" Foreground="#FFC7B81F" BorderBrush="Black" Background="Black" FontSize="36" FontFamily="Showcard Gothic"/>
