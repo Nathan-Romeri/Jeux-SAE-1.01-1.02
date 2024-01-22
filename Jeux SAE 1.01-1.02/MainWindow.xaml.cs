@@ -146,8 +146,9 @@ namespace Jeux_SAE_1._01_1._02
                 //BOUTON PAUSE
                 Image pauseImage = new Image();
                 pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\bouton_pause.png", UriKind.RelativeOrAbsolute));
-                pauseImage.Width = 100;
-                pauseImage.Height = 100;
+                pauseImage.Width = 50;
+                pauseImage.Height = 50;
+
 
                 //EVENEMENT CLICK SUR BOUTON PAUSE
                 pauseImage.Tag = "PauseButton";
@@ -734,7 +735,7 @@ namespace Jeux_SAE_1._01_1._02
             }
 
             Image pauseImage = new Image();
-            pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\Pause_Button_Icon.png", UriKind.RelativeOrAbsolute));
+            pauseImage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "img\\bouton_pause.png", UriKind.RelativeOrAbsolute));
             pauseImage.Width = 100;
             pauseImage.Height = 100;
 
