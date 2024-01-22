@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Fond_ecran_flouter.png"/>
+            <ImageBrush ImageSource="/fond_ecran.png"/>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Center" Height="622" VerticalAlignment="Center" Width="600" Fill="#FF9A9A9A" Stroke="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="462,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Showcard Gothic" Text="Commandes :" Foreground="#FFE6FF00" TextDecorations="Underline" Height="36" Width="168" FontSize="24"/>

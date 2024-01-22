@@ -73,6 +73,9 @@
     <None Update="img\89e0dea18ceb5e396f9ec1a5ae109262.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="img\bouton_pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="img\Dragon-Ball-Goku-PNG-Image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
